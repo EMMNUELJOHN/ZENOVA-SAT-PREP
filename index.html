@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenova SAT Prep — Study Smarter. Score Higher.</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --navy2: #0d1f3c;
+  --navy3: #1a3560;
+  --blue: #1346c8;
+  --blue2: #1a56e8;
+  --cyan: #0e7ab5;
+  --cyan2: #0ea5e9;
+  --accent: #2563eb;
+  --white: #ffffff;
+  --off: #f5f8ff;
+  --off2: #eef2fc;
+  --text: #0a1628;
+  --text2: #1a3560;
+  --gray: #4a5568;
+  --gray2: #718096;
+  --border: #dbe5f8;
+  --border2: #c3d4f5;
+  --card: #ffffff;
+  --shadow: 0 1px 3px rgba(10,22,40,0.06), 0 4px 16px rgba(10,22,40,0.08);
+  --shadow-hover: 0 8px 32px rgba(19,70,200,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#ffffff;color:var(--text);overflow-x:hidden;line-height:1.6;}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:#f5f8ff;}
+::-webkit-scrollbar-thumb{background:var(--blue);border-radius:3px;}
+
+/* NAV */
+#navbar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4%;height:68px;
+  background:rgba(255,255,255,0.98);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(10,22,40,0.06);
+  transition:all 0.3s;
+}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;cursor:pointer;}
+.nav-logo{width:40px;height:40px;border-radius:50%;border:2px solid rgba(19,70,200,0.2);overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--navy);}
+.nav-logo svg{width:100%;height:100%;}
+.nav-brand-name{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--navy);letter-spacing:-0.02em;}
+.nav-brand-name span{color:var(--blue);}
+.nav-menu{display:flex;gap:0.1rem;list-style:none;align-items:center;}
+.nav-menu li a, .nav-menu li button{
+  background:none;border:none;cursor:pointer;
+  color:var(--gray);font-size:0.82rem;font-weight:500;font-family:'Plus Jakarta Sans',sans-serif;
+  padding:0.45rem 0.75rem;border-radius:8px;text-decoration:none;
+  transition:all 0.2s;display:block;
+}
+.nav-menu li a:hover,.nav-menu li button:hover,.nav-menu li a.active,.nav-menu li button.active{color:var(--navy);background:var(--off2);}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:0.45rem 1.1rem!important;border-radius:8px!important;font-weight:600!important;}
+.nav-cta:hover{background:var(--blue)!important;color:#fff!important;}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s;}
+
+/* PAGES */
+.page{display:none;min-height:100vh;padding-top:68px;background:#ffffff;}
+.page.active{display:block;}
+
+/* ===================== HERO ===================== */
+.hero{
+  min-height:calc(100vh - 68px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:4rem 5%;
+  position:relative;overflow:hidden;
+  background:#ffffff;
+}
+.hero-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(19,70,200,0.08) 1px, transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+.hero-glow{
+  position:absolute;
+  width:700px;height:500px;
+  background:radial-gradient(ellipse, rgba(19,70,200,0.06) 0%, transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-60%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:860px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--off2);border:1px solid var(--border2);
+  color:var(--blue);font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:0.4rem 1.2rem;border-radius:50px;margin-bottom:2rem;
+  animation:fadeUp 0.7s ease both;
+}
+.hero h1{
+  font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,5.8rem);font-weight:400;
+  line-height:1.05;margin-bottom:1.5rem;color:var(--navy);
+  animation:fadeUp 0.7s 0.1s ease both;letter-spacing:-0.02em;
+}
+.hero h1 .blue{color:var(--blue);}
+.hero h1 .italic{font-style:italic;}
+.hero-quote{
+  font-size:0.95rem;color:var(--gray);font-style:italic;
+  margin-bottom:1rem;animation:fadeUp 0.7s 0.15s ease both;
+  border-left:3px solid var(--blue);padding-left:1rem;text-align:left;max-width:550px;margin-left:auto;margin-right:auto;background:var(--off);padding:0.8rem 1rem;border-radius:0 8px 8px 0;
+}
+.hero p{font-size:1rem;color:var(--gray);line-height:1.8;max-width:580px;margin:1.2rem auto 2.5rem;animation:fadeUp 0.7s 0.2s ease both;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.7s 0.25s ease both;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.8rem;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',sans-serif;transition:all 0.25s;white-space:nowrap;}
+.btn-primary{background:var(--navy);color:white;box-shadow:0 2px 12px rgba(10,22,40,0.2);}
+.btn-primary:hover{background:var(--blue);transform:translateY(-2px);box-shadow:0 8px 24px rgba(19,70,200,0.3);}
+.btn-blue{background:var(--blue);color:white;box-shadow:0 2px 12px rgba(19,70,200,0.25);}
+.btn-blue:hover{background:var(--navy);transform:translateY(-2px);}
+.btn-outline{border:1.5px solid var(--border2);color:var(--navy);background:#fff;}
+.btn-outline:hover{background:var(--off2);border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+.btn-outline-dark{border:1.5px solid var(--navy);color:var(--navy);background:#fff;}
+.btn-outline-dark:hover{background:var(--navy);color:#fff;transform:translateY(-2px);}
+
+/* STATS */
+.stats-row{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  max-width:860px;margin:3rem auto 0;
+  background:#fff;border:1.5px solid var(--border);border-radius:16px;
+  overflow:hidden;box-shadow:var(--shadow);
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.stat{text-align:center;padding:1.5rem 1rem;border-right:1px solid var(--border);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--blue);}
+.stat-label{font-size:0.75rem;color:var(--gray);margin-top:0.3rem;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;}
+
+/* MARQUEE */
+.quote-strip{
+  background:var(--off);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:0.9rem 0;overflow:hidden;position:relative;
+}
+.quote-track{display:flex;gap:3rem;animation:marquee 40s linear infinite;width:max-content;}
+.quote-item{white-space:nowrap;font-size:0.85rem;color:var(--gray2);display:flex;align-items:center;gap:0.6rem;}
+.quote-item::before{content:'✦';color:var(--blue);font-size:0.7rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* HOME CARDS */
+.home-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:4rem auto;padding:0 5%;}
+.home-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:16px;
+  padding:2rem;cursor:pointer;transition:all 0.3s;text-align:left;
+  box-shadow:var(--shadow);
+}
+.home-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:var(--shadow-hover);}
+.card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.2rem;background:var(--off2);}
+.home-card h3{font-family:'DM Serif Display',serif;font-size:1.15rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;letter-spacing:-0.01em;}
+.home-card p{font-size:0.83rem;color:var(--gray);line-height:1.6;}
+.card-arrow{display:inline-flex;align-items:center;gap:0.3rem;color:var(--blue);font-size:0.8rem;font-weight:600;margin-top:1rem;}
+
+/* PAGE HERO */
+.page-hero{
+  padding:3rem 5% 2.5rem;
+  background:linear-gradient(135deg,var(--navy) 0%, var(--navy3) 100%);
+  border-bottom:3px solid var(--blue);
+}
+.page-hero-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan2);margin-bottom:0.6rem;}
+.page-hero h1{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:400;margin-bottom:0.6rem;color:#fff;letter-spacing:-0.02em;}
+.page-hero p{color:rgba(255,255,255,0.55);font-size:0.92rem;max-width:620px;}
+
+/* TOPIC TABS */
+.topic-tabs{
+  display:flex;gap:0.5rem;padding:1.2rem 5%;
+  overflow-x:auto;scrollbar-width:none;
+  border-bottom:1.5px solid var(--border);
+  position:sticky;top:68px;background:#fff;z-index:50;
+}
+.topic-tabs::-webkit-scrollbar{display:none;}
+.tab{
+  white-space:nowrap;padding:0.5rem 1.2rem;border-radius:8px;
+  background:var(--off);border:1.5px solid var(--border);
+  color:var(--gray);font-size:0.82rem;font-weight:600;cursor:pointer;
+  transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.tab:hover,.tab.active{background:var(--navy);color:white;border-color:var(--navy);}
+
+/* FORMULA SECTION */
+.formula-section{padding:0 5% 2rem;display:none;background:#fff;}
+.formula-section.active{display:block;}
+.formula-section-title{
+  font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:400;
+  padding:2rem 0 1.2rem;color:var(--navy);
+  display:flex;align-items:center;gap:0.8rem;letter-spacing:-0.01em;
+}
+.formula-section-title::after{content:'';flex:1;height:1.5px;background:var(--border);}
+
+.formula-grid{display:flex;flex-direction:column;gap:1.2rem;}
+.formula-card{
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:14px;overflow:hidden;transition:all 0.25s;
+  box-shadow:var(--shadow);
+}
+.formula-card:hover{border-color:var(--blue);box-shadow:var(--shadow-hover);}
+.formula-header{
+  padding:1.2rem 1.5rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  background:#fff;
+}
+.formula-header:hover{background:var(--off);}
+.formula-name{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;color:var(--navy);letter-spacing:-0.01em;}
+.formula-eq{
+  font-family:'Courier New',monospace;font-size:0.95rem;color:var(--blue);
+  background:var(--off2);padding:0.35rem 0.9rem;border-radius:6px;
+  border:1px solid var(--border2);flex-shrink:0;font-weight:700;
+}
+.formula-toggle{color:var(--gray2);transition:transform 0.3s;font-size:0.9rem;}
+.formula-card.open .formula-toggle{transform:rotate(180deg);}
+.formula-body{display:none;padding:1.5rem;border-top:1.5px solid var(--border);background:var(--off);}
+.formula-card.open .formula-body{display:block;}
+.formula-grid-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
+.formula-info{background:#fff;border-radius:10px;padding:1rem;border:1px solid var(--border);}
+.formula-info-label{font-size:0.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:0.6rem;}
+.formula-info p,.formula-info code{font-size:0.85rem;color:var(--text);line-height:1.65;}
+.formula-info code{background:var(--off2);padding:0.15rem 0.4rem;border-radius:4px;font-family:'Courier New',monospace;font-size:0.82rem;color:var(--blue);}
+.mistake{background:#fff5f5;border:1px solid #fecaca;}
+.mistake .formula-info-label{color:#dc2626;}
+.tip{background:#fffbeb;border:1px solid #fde68a;}
+.tip .formula-info-label{color:#d97706;}
+
+/* STRATEGY */
+.strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;padding:2rem 5%;background:#fff;}
+.strategy-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2rem;transition:all 0.3s;box-shadow:var(--shadow);}
+.strategy-card:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:var(--shadow-hover);}
+.strategy-card h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:1rem;display:flex;align-items:center;gap:0.6rem;color:var(--navy);}
+.strategy-list{list-style:none;}
+.strategy-list li{padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.875rem;color:var(--gray);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.6;}
+.strategy-list li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:700;}
+.strategy-list li:last-child{border-bottom:none;}
+
+/* SCORE PLAN */
+.score-plans{display:flex;flex-direction:column;gap:1.5rem;padding:2rem 5%;background:#fff;}
+.score-plan{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2rem;transition:all 0.3s;box-shadow:var(--shadow);}
+.score-plan:hover{border-color:var(--blue);box-shadow:var(--shadow-hover);}
+.score-range{display:inline-flex;align-items:center;gap:0.5rem;background:var(--off2);border:1px solid var(--border2);color:var(--blue);font-size:0.82rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:6px;margin-bottom:1rem;}
+.score-plan h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:1rem;color:var(--navy);}
+.plan-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem;}
+.plan-step{background:var(--off);border:1.5px solid var(--border);border-radius:10px;padding:0.9rem;}
+.step-num{font-family:'DM Serif Display',serif;font-size:1.5rem;font-weight:400;color:var(--blue);opacity:0.35;}
+.plan-step h4{font-size:0.85rem;font-weight:600;margin:0.2rem 0;color:var(--navy);}
+.plan-step p{font-size:0.78rem;color:var(--gray);line-height:1.5;}
+
+/* STUDY PLAN PAGE */
+.study-plan-page{padding:2rem 5%;background:#fff;}
+.plan-tabs{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;}
+.day-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.2rem;transition:all 0.2s;box-shadow:var(--shadow);}
+.day-card:hover{border-color:var(--blue);box-shadow:var(--shadow-hover);}
+.day-card.milestone{background:var(--navy);border-color:var(--navy);color:#fff;}
+.day-card.milestone .day-num,.day-card.milestone .day-title,.day-card.milestone .day-topics{color:#fff;}
+.day-card.review{background:var(--off2);border-color:var(--border2);}
+.day-num{font-size:0.68rem;font-weight:700;color:var(--cyan2);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.4rem;}
+.day-card.milestone .day-num{color:var(--cyan2);}
+.day-title{font-family:'DM Serif Display',serif;font-size:0.98rem;font-weight:400;color:var(--navy);margin-bottom:0.3rem;}
+.day-topics{font-size:0.78rem;color:var(--gray);line-height:1.5;}
+
+/* TIMETABLE */
+.timetable-section{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:1.5rem;margin:2rem 5%;box-shadow:var(--shadow);}
+.timetable-grid{display:grid;grid-template-columns:90px repeat(7,1fr);font-size:0.75rem;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.tg-header{background:var(--navy);color:white;padding:0.5rem 0.3rem;text-align:center;font-weight:700;font-size:0.72rem;letter-spacing:0.5px;}
+.tg-time{background:var(--off);padding:0.4rem 0.5rem;text-align:center;font-size:0.7rem;color:var(--gray);border-top:1px solid var(--border);border-right:1px solid var(--border);font-weight:500;}
+.tg-cell{padding:0.35rem 0.3rem;text-align:center;min-height:34px;cursor:pointer;transition:background 0.15s;border-top:1px solid var(--border);border-right:1px solid var(--border);font-size:0.65rem;font-weight:600;display:flex;align-items:center;justify-content:center;}
+.tg-cell:hover{background:var(--off2);}
+.tg-cell.filled{background:var(--navy);color:#fff;font-size:0.62rem;}
+
+/* TIMETABLE GENERATOR */
+.tt-generator{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:1.5rem;margin:0 5% 2rem;box-shadow:var(--shadow);}
+.tt-generator h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:1rem;}
+.tt-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.2rem;}
+.tt-form .form-group label{font-size:0.78rem;font-weight:600;color:var(--navy);display:block;margin-bottom:0.4rem;}
+.tt-form .form-group input, .tt-form .form-group select{width:100%;border:1.5px solid var(--border);border-radius:8px;padding:0.5rem 0.75rem;font-size:0.85rem;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);background:#fff;outline:none;transition:border-color 0.2s;}
+.tt-form .form-group input:focus, .tt-form .form-group select:focus{border-color:var(--blue);}
+
+/* COUNTDOWN */
+.countdown-page{padding:2rem 5%;background:#fff;}
+.countdown-setup{max-width:480px;margin:0 auto;background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;text-align:center;box-shadow:var(--shadow);}
+.countdown-setup h2{font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;}
+.countdown-setup p{color:var(--gray);font-size:0.9rem;margin-bottom:1.8rem;}
+.countdown-display{text-align:center;padding:2rem;}
+.exam-name-display{font-family:'DM Serif Display',serif;font-size:2.2rem;font-weight:400;color:var(--navy);margin-bottom:0.3rem;}
+.exam-date-display{font-size:0.85rem;color:var(--gray);margin-bottom:2rem;}
+.countdown-numbers{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.count-block{text-align:center;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:1.5rem 2rem;min-width:100px;box-shadow:var(--shadow);}
+.count-num{font-family:'DM Serif Display',serif;font-size:3.5rem;font-weight:400;color:var(--navy);line-height:1;}
+.count-label{font-size:0.72rem;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-top:0.4rem;font-weight:600;}
+
+/* FORMS */
+.form-group{margin-bottom:1.2rem;}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--border);border-radius:10px;padding:0.7rem 1rem;font-size:0.9rem;font-family:'Plus Jakarta Sans',sans-serif;color:var(--navy);background:#fff;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);}
+.form-group textarea{resize:vertical;min-height:80px;}
+
+/* PROFILE */
+.profile-page{padding:2rem 5%;max-width:860px;margin:0 auto;}
+.profile-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:2rem;margin-bottom:1.5rem;box-shadow:var(--shadow);}
+.profile-header{display:flex;gap:1.5rem;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:white;font-family:'DM Serif Display',serif;cursor:pointer;transition:all 0.3s;border:3px solid var(--border2);}
+.avatar:hover{background:var(--blue);}
+.profile-info h2{font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;color:var(--navy);}
+.profile-info p{font-size:0.85rem;color:var(--gray);}
+.profile-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.5rem;}
+.p-stat{background:var(--off);border-radius:10px;padding:1rem;text-align:center;}
+.p-stat-num{font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:400;color:var(--blue);}
+.p-stat-label{font-size:0.7rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;}
+.progress-bar-wrap{margin-bottom:1rem;}
+.progress-bar-wrap label{display:flex;justify-content:space-between;font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:0.4rem;}
+.progress-bar{background:var(--off2);border-radius:100px;height:8px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:100px;transition:width 0.8s ease;width:0;}
+
+/* DESMOS */
+.desmos-page{padding:2rem 5%;background:#fff;}
+.desmos-container{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+.desmos-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:1rem;background:#fff;}
+.desmos-iframe-wrap{position:relative;padding-bottom:60%;height:0;overflow:hidden;}
+.desmos-iframe-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.desmos-cta{padding:2rem 1.5rem;text-align:center;background:var(--off);}
+.desmos-cta h2{font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;color:var(--navy);margin-bottom:0.5rem;}
+.desmos-cta p{color:var(--gray);font-size:0.9rem;max-width:500px;margin:0 auto 2rem;}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;padding:2rem 5%;background:#fff;}
+.blog-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;cursor:pointer;transition:all 0.3s;box-shadow:var(--shadow);}
+.blog-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover);border-color:var(--blue);}
+.blog-thumb{height:200px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden;}
+.blog-thumb-img{width:100%;height:100%;object-fit:cover;}
+.blog-thumb.navy{background:linear-gradient(135deg,var(--navy),var(--navy3));}
+.blog-thumb.teal{background:linear-gradient(135deg,#0369a1,#0891b2);}
+.blog-thumb.red{background:linear-gradient(135deg,#dc2626,#b91c1c);}
+.blog-thumb.dark{background:linear-gradient(135deg,#1e293b,#334155);}
+.blog-thumb-label{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,0.12);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.3rem 0.7rem;border-radius:50px;backdrop-filter:blur(8px);}
+.blog-content{padding:1.5rem;}
+.blog-tag{display:inline-block;background:var(--off2);color:var(--blue);font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:50px;margin-bottom:0.7rem;border:1px solid var(--border2);}
+.blog-card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;color:var(--navy);line-height:1.4;margin-bottom:0.5rem;letter-spacing:-0.01em;}
+.blog-card p{font-size:0.82rem;color:var(--gray);line-height:1.6;margin-bottom:1rem;}
+.blog-meta{font-size:0.75rem;color:var(--gray2);font-weight:500;}
+
+/* BLOG MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,22,40,0.7);backdrop-filter:blur(4px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal-content{background:#fff;border-radius:20px;max-width:640px;width:100%;max-height:80vh;overflow:auto;box-shadow:0 24px 80px rgba(10,22,40,0.3);}
+.modal-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;z-index:1;}
+.modal-close{background:var(--off);border:none;cursor:pointer;color:var(--gray);font-size:1rem;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+.modal-close:hover{background:var(--navy);color:#fff;}
+.modal-body{padding:1.5rem;}
+.modal-body h3{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--navy);margin:1.2rem 0 0.5rem;}
+.modal-body p{font-size:0.9rem;color:var(--gray);line-height:1.7;margin-bottom:0.6rem;}
+.modal-body a{color:var(--blue);}
+
+/* REGISTER */
+.register-page{padding:2rem 5%;min-height:calc(100vh - 68px);display:flex;align-items:center;justify-content:center;background:var(--off);}
+.register-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:2.5rem;max-width:520px;width:100%;box-shadow:var(--shadow);}
+.register-card h2{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;color:var(--navy);margin-bottom:0.4rem;}
+.register-card .subtitle{color:var(--gray);font-size:0.88rem;margin-bottom:2rem;}
+.logo-wrap{margin-bottom:1.5rem;display:flex;align-items:center;gap:12px;}
+.success-msg{display:none;text-align:center;padding:2rem 0;}
+.success-msg .check{font-size:3rem;margin-bottom:1rem;}
+.success-msg h3{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:0.8rem;}
+.success-msg p{color:var(--gray);font-size:0.9rem;}
+
+/* PDF PAGE */
+.pdf-page{padding:2rem 5%;background:#fff;}
+.pdf-preview{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;max-width:800px;margin:0 auto;box-shadow:var(--shadow);}
+.pdf-header{background:linear-gradient(135deg,var(--navy),var(--navy3));padding:2rem;text-align:center;}
+.pdf-logo{font-family:'DM Serif Display',serif;font-size:1.8rem;color:#fff;letter-spacing:-0.02em;}
+.pdf-logo span{color:var(--cyan2);}
+.pdf-title{font-size:0.82rem;color:rgba(255,255,255,0.5);margin-top:0.4rem;}
+.pdf-body{padding:2rem;}
+.pdf-section{margin-bottom:2rem;}
+.pdf-section h3{font-family:'DM Serif Display',serif;font-size:1rem;font-weight:400;color:var(--navy);border-bottom:2px solid var(--border);padding-bottom:0.4rem;margin-bottom:1rem;letter-spacing:0.5px;}
+.pdf-formula-row{display:flex;justify-content:space-between;align-items:center;padding:0.55rem 0;border-bottom:1px dashed var(--border);font-size:0.85rem;}
+.pdf-formula-row:last-child{border-bottom:none;}
+.pdf-f-name{font-weight:600;color:var(--text);flex:1;}
+.pdf-f-eq{font-family:'Courier New',monospace;color:var(--blue);background:var(--off2);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.8rem;font-weight:700;}
+
+/* SCORE IMPROVEMENT TEASER */
+.score-teaser{
+  background:linear-gradient(135deg,var(--navy),var(--navy3));
+  border-radius:20px;padding:2.5rem;text-align:center;margin:0 5% 4rem;
+}
+.score-teaser-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan2);margin-bottom:0.8rem;}
+.score-teaser h2{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.5rem;color:#fff;}
+.score-teaser p{color:rgba(255,255,255,0.5);font-size:0.9rem;max-width:500px;margin:0 auto 2rem;}
+.btn-outline-white{border:1.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);background:transparent;}
+.btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:3px solid var(--blue);padding:3rem 5% 2rem;}
+.footer-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;margin-bottom:2.5rem;max-width:1100px;}
+.footer-brand-name{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;margin-bottom:0.5rem;}
+.footer-brand-name span{color:var(--cyan2);}
+.footer-col-title{font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1rem;}
+.footer-link{color:rgba(255,255,255,0.5);font-size:0.85rem;text-decoration:none;display:block;margin-bottom:0.5rem;transition:color 0.2s;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;text-align:left;padding:0;}
+.footer-link:hover{color:var(--cyan2);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-copyright{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-menu{display:none;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:1rem;box-shadow:0 8px 24px rgba(10,22,40,0.1);}
+  .nav-menu.open{display:flex;}
+  .hamburger{display:flex;}
+  .stats-row{grid-template-columns:repeat(2,1fr);}
+  .profile-stats{grid-template-columns:repeat(2,1fr);}
+  .timetable-grid{grid-template-columns:80px repeat(7,1fr);font-size:0.6rem;}
+  .tg-header,.tg-time,.tg-cell{padding:0.2rem;}
+  .count-num{font-size:2.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-brand" onclick="showPage('home')">
+    <div class="nav-logo">
+      <!-- Zenova Z Logo -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="50" fill="#0a1628"/>
+        <defs>
+          <linearGradient id="zgrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff"/>
+            <stop offset="50%" style="stop-color:#38bdf8"/>
+            <stop offset="100%" style="stop-color:#06b6d4"/>
+          </linearGradient>
+        </defs>
+        <text x="50" y="68" text-anchor="middle" font-size="54" font-weight="900" fill="url(#zgrad)" font-family="serif" font-style="italic">Z</text>
+        <!-- swoosh -->
+        <ellipse cx="50" cy="55" rx="28" ry="7" fill="none" stroke="#0ea5e9" stroke-width="2" opacity="0.6" transform="rotate(-10,50,55)"/>
+      </svg>
+    </div>
+    <div class="nav-brand-name">Zenova <span>SAT Prep</span></div>
+  </div>
+  <ul class="nav-menu" id="navMenu">
+    <li><button class="active" onclick="showPage('home');setActive(this)">Home</button></li>
+    <li><button onclick="showPage('formulas');setActive(this)">Formulas</button></li>
+    <li><button onclick="showPage('strategy');setActive(this)">Strategy</button></li>
+    <li><button onclick="showPage('study-plan');setActive(this)">Timetable</button></li>
+    <li><button onclick="showPage('countdown');setActive(this)">Countdown</button></li>
+    <li><button onclick="showPage('desmos');setActive(this)">Desmos</button></li>
+    <li><button onclick="showPage('blog');setActive(this)">Blog</button></li>
+    <li><button onclick="showPage('profile');setActive(this)">Profile</button></li>
+    <li><button class="nav-cta" onclick="showPage('register');setActive(this)">Register</button></li>
+  </ul>
+  <button class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-dots"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <div class="hero-badge">✦ Your Ultimate SAT Math Companion</div>
+      <h1>Crack the SAT.<br><span class="blue italic">Score Your Best.</span></h1>
+      <div class="hero-quote">"The secret of getting ahead is getting started." — Mark Twain</div>
+      <p>Every formula, every strategy, every plan you need — all in one place. Zenova SAT Prep is built for students who are serious about hitting their target score.</p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showPage('formulas');setActiveByPage('formulas')">📘 Formula Library</button>
+        <button class="btn btn-outline-dark" onclick="showPage('strategy');setActiveByPage('strategy')">🧠 Study Strategies</button>
+        <button class="btn btn-blue" onclick="showPage('register');setActiveByPage('register')">🚀 Join Free</button>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">300+</div><div class="stat-label">SAT Formulas</div></div>
+      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Strategy Topics</div></div>
+      <div class="stat"><div class="stat-num">90</div><div class="stat-label">Day Study Plans</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free Access</div></div>
+    </div>
+  </section>
+
+  <div class="quote-strip">
+    <div class="quote-track" id="quoteTrack">
+      <span class="quote-item">"You don't have to be great to start, but you have to start to be great."</span>
+      <span class="quote-item">"Success is the sum of small efforts repeated day in and day out."</span>
+      <span class="quote-item">"Believe you can and you're halfway there."</span>
+      <span class="quote-item">"Your only limit is your mind."</span>
+      <span class="quote-item">"Hard work beats talent when talent doesn't work hard."</span>
+      <span class="quote-item">"Every expert was once a beginner."</span>
+      <span class="quote-item">"Push yourself because no one else is going to do it for you."</span>
+      <span class="quote-item">"You don't have to be great to start, but you have to start to be great."</span>
+      <span class="quote-item">"Success is the sum of small efforts repeated day in and day out."</span>
+      <span class="quote-item">"Believe you can and you're halfway there."</span>
+      <span class="quote-item">"Your only limit is your mind."</span>
+      <span class="quote-item">"Hard work beats talent when talent doesn't work hard."</span>
+      <span class="quote-item">"Every expert was once a beginner."</span>
+      <span class="quote-item">"Push yourself because no one else is going to do it for you."</span>
+    </div>
+  </div>
+
+  <div class="home-cards">
+    <div class="home-card reveal" onclick="showPage('formulas');setActiveByPage('formulas')">
+      <div class="card-icon">📘</div>
+      <h3>SAT Math Formula Library</h3>
+      <p>All 300+ SAT math formulas organized by topic with examples, common mistakes, and speed tips.</p>
+      <div class="card-arrow">Explore Formulas →</div>
+    </div>
+    <div class="home-card reveal" onclick="showPage('strategy');setActiveByPage('strategy')">
+      <div class="card-icon">🧠</div>
+      <h3>Expert SAT Strategies</h3>
+      <p>Time management, guessing strategy, calculator use, and how to avoid traps set by test makers.</p>
+      <div class="card-arrow">Learn Strategies →</div>
+    </div>
+    <div class="home-card reveal" onclick="showPage('study-plan');setActiveByPage('study-plan')">
+      <div class="card-icon">📅</div>
+      <h3>Study Plan & Timetable</h3>
+      <p>Generate and edit your weekly timetable. Choose a 30, 60, or 90-day study plan and stay on track.</p>
+      <div class="card-arrow">Build Your Timetable →</div>
+    </div>
+    <div class="home-card reveal" onclick="showPage('countdown');setActiveByPage('countdown')">
+      <div class="card-icon">⏰</div>
+      <h3>Exam Countdown Timer</h3>
+      <p>Set your SAT exam date and watch the countdown. Every day is precious — don't waste it.</p>
+      <div class="card-arrow">Set Countdown →</div>
+    </div>
+    <div class="home-card reveal" onclick="showPage('desmos');setActiveByPage('desmos')">
+      <div class="card-icon">📊</div>
+      <h3>Desmos Calculator</h3>
+      <p>Practice with the same Desmos graphing calculator used on the actual SAT exam.</p>
+      <div class="card-arrow">Open Calculator →</div>
+    </div>
+    <div class="home-card reveal" onclick="showPage('pdf')">
+      <div class="card-icon">📥</div>
+      <h3>Free Formula PDF Sheet</h3>
+      <p>Download a beautifully designed, Zenova-branded SAT Math formula sheet for offline study.</p>
+      <div class="card-arrow">Download PDF →</div>
+    </div>
+  </div>
+
+  <div class="score-teaser reveal" style="max-width:1100px;margin:0 auto 4rem;">
+    <div style="padding:0 5%;"><div style="background:linear-gradient(135deg,var(--navy),var(--navy3));border-radius:20px;padding:2.5rem;text-align:center;">
+      <div class="score-teaser-label">Score Improvement Plans</div>
+      <h2 style="font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.5rem;color:#fff;">Where Are You Now?</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;max-width:500px;margin:0 auto 2rem;">We have a tailored plan for every score range. Click your current score to see exactly what to do.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+        <button class="btn btn-outline-white" onclick="showPage('score-plan');setActiveByPage('score-plan')">400–500 Range</button>
+        <button class="btn btn-outline-white" onclick="showPage('score-plan');setActiveByPage('score-plan')">500–600 Range</button>
+        <button class="btn btn-outline-white" onclick="showPage('score-plan');setActiveByPage('score-plan')">600–700 Range</button>
+        <button class="btn btn-blue" onclick="showPage('score-plan');setActiveByPage('score-plan')">700–800 Range</button>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ==================== FORMULAS PAGE ==================== -->
+<div class="page" id="page-formulas">
+  <div class="page-hero">
+    <div class="page-hero-label">📘 Formula Library</div>
+    <h1>SAT Math Formula Library</h1>
+    <p>Every formula you need, organized by topic. Click any formula to see when to use it, examples, common mistakes, and speed tips.</p>
+  </div>
+
+  <div class="topic-tabs" id="formulaTabs">
+    <button class="tab active" onclick="showFormulaTopic('algebra',this)">📐 Algebra</button>
+    <button class="tab" onclick="showFormulaTopic('advanced',this)">🔢 Advanced Math</button>
+    <button class="tab" onclick="showFormulaTopic('data',this)">📊 Problem Solving & Data</button>
+    <button class="tab" onclick="showFormulaTopic('geometry',this)">📏 Geometry & Trig</button>
+  </div>
+
+  <div class="formula-section active" id="fs-algebra">
+    <div style="padding:0 5%;"><div class="formula-section-title">📐 Algebra</div><div class="formula-grid" id="algebraFormulas"></div></div>
+  </div>
+  <div class="formula-section" id="fs-advanced">
+    <div style="padding:0 5%;"><div class="formula-section-title">🔢 Advanced Math</div><div class="formula-grid" id="advancedFormulas"></div></div>
+  </div>
+  <div class="formula-section" id="fs-data">
+    <div style="padding:0 5%;"><div class="formula-section-title">📊 Problem Solving & Data</div><div class="formula-grid" id="dataFormulas"></div></div>
+  </div>
+  <div class="formula-section" id="fs-geometry">
+    <div style="padding:0 5%;"><div class="formula-section-title">📏 Geometry & Trigonometry</div><div class="formula-grid" id="geometryFormulas"></div></div>
+  </div>
+</div>
+
+<!-- ==================== STRATEGY PAGE ==================== -->
+<div class="page" id="page-strategy">
+  <div class="page-hero">
+    <div class="page-hero-label">🧠 Strategy</div>
+    <h1>SAT Math Strategies That Win</h1>
+    <p>Knowing the formulas is half the battle. Knowing how to use them under pressure is what separates a 600 from an 800.</p>
+  </div>
+  <div class="strategy-grid">
+    <div class="strategy-card reveal">
+      <h3>⏱️ Time Management</h3>
+      <ul class="strategy-list">
+        <li>Never spend more than 90 seconds on any single question before moving on.</li>
+        <li>Do a first pass: answer easy questions, flag harder ones to return to later.</li>
+        <li>Save 5 minutes at the end of each module to review flagged questions.</li>
+        <li>For 22-question modules, aim for ~75 seconds per question on average.</li>
+        <li>If stuck, eliminate wrong answers and make an educated guess — no penalty for wrong answers on digital SAT.</li>
+        <li>Use your calculator efficiently: set it up for the test, don't do mental math you can delegate.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>🎯 Guessing Strategy</h3>
+      <ul class="strategy-list">
+        <li>Always guess — the digital SAT has no guessing penalty.</li>
+        <li>Never leave a question blank. Even a random guess gives you a 25% chance.</li>
+        <li>Eliminate 1-2 wrong answers first to boost your odds to 33% or 50%.</li>
+        <li>Look for answer traps: answers that look right but use wrong operations.</li>
+        <li>If answers are close together numerically, re-check your arithmetic carefully.</li>
+        <li>Between two remaining answers, always pick the simpler-looking one for estimation.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>🔢 Calculator Strategy</h3>
+      <ul class="strategy-list">
+        <li>Use Desmos to solve systems of equations visually — plot both lines and find intersection.</li>
+        <li>Use Desmos to graph quadratics — find roots, vertex, and axis of symmetry instantly.</li>
+        <li>Store intermediate values in memory to avoid re-typing long numbers.</li>
+        <li>Don't use the calculator for simple arithmetic — it wastes time.</li>
+        <li>Know when NOT to use the calculator — algebraic manipulation is often faster.</li>
+        <li>Practice with Desmos before test day so it feels natural under exam conditions.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>💪 Hard Question Approach</h3>
+      <ul class="strategy-list">
+        <li>Read the question twice before looking at answers — understand what's actually being asked.</li>
+        <li>Work backwards from the answer choices for complex word problems.</li>
+        <li>Draw diagrams for geometry problems — visualizing always helps.</li>
+        <li>For algebraic word problems, assign variables and build equations systematically.</li>
+        <li>Use substitution: plug simple numbers (0, 1, 2) to test relationships.</li>
+        <li>Hard questions often have a simpler solution — look for elegant approaches before brute force.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>🪤 Avoid the Traps</h3>
+      <ul class="strategy-list">
+        <li>SAT trap answers are often the result of common calculation errors — be suspicious of "obvious" answers.</li>
+        <li>Watch for "not" in questions: "which is NOT true?" changes everything.</li>
+        <li>Unit traps: answer in meters but the question asks for centimeters.</li>
+        <li>Read carefully: "at least," "at most," "greater than," "no less than" each have different meanings.</li>
+        <li>Coordinate plane traps: don't confuse x and y intercepts.</li>
+        <li>Percent traps: "30% more than" is different from "30% of" — know the difference.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>📖 Day-Before & Test Day</h3>
+      <ul class="strategy-list">
+        <li>Don't cram the night before — review formulas lightly, then rest well.</li>
+        <li>Eat a solid breakfast: your brain needs fuel for 2+ hours of testing.</li>
+        <li>Arrive early — familiar surroundings reduce anxiety.</li>
+        <li>Bring your calculator fully charged (if you have a physical one).</li>
+        <li>Read every question word for word — rushing causes careless errors.</li>
+        <li>Stay calm: if a question stumps you, breathe, skip it, and come back.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>📝 Reading & Writing Strategy</h3>
+      <ul class="strategy-list">
+        <li>Read the question first — then find the answer in the passage, not the other way around.</li>
+        <li>For grammar questions, read the full sentence before choosing punctuation.</li>
+        <li>Transitions ("however," "therefore," "moreover") — know what each one implies logically.</li>
+        <li>Main idea questions: ignore specific details and focus on what the whole passage is about.</li>
+        <li>Vocabulary in context: re-read 2 sentences before and after the word.</li>
+        <li>For evidence questions, always link your answer to what the passage literally says.</li>
+      </ul>
+    </div>
+    <div class="strategy-card reveal">
+      <h3>🔍 Process of Elimination</h3>
+      <ul class="strategy-list">
+        <li>Cross out choices that are clearly wrong first — you'll narrow down faster.</li>
+        <li>If two choices seem similar, find what makes them different — that's the key to choosing.</li>
+        <li>Extreme language ("always," "never," "all") is usually wrong on reading questions.</li>
+        <li>For math, plug in values to eliminate answer choices that don't work.</li>
+        <li>Distractor answers on the SAT are often half-right — read every word carefully.</li>
+        <li>If you eliminate 3 choices, go with the remaining one even if you're unsure.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SCORE PLAN PAGE ==================== -->
+<div class="page" id="page-score-plan">
+  <div class="page-hero">
+    <div class="page-hero-label">📈 Score Improvement</div>
+    <h1>Your Personalized Score Plan</h1>
+    <p>Find your current score range below and follow the exact steps to reach the next level.</p>
+  </div>
+  <div class="score-plans">
+    <div class="score-plan reveal">
+      <div class="score-range">📊 400–500 Range</div>
+      <h3>Building Your Foundation</h3>
+      <div class="plan-steps">
+        <div class="plan-step"><div class="step-num">01</div><h4>Diagnose Weaknesses</h4><p>Take a full practice test. Circle every wrong answer and categorize by topic.</p></div>
+        <div class="plan-step"><div class="step-num">02</div><h4>Master Core Algebra</h4><p>Spend 3 weeks on slope, linear equations, and percent problems before anything else.</p></div>
+        <div class="plan-step"><div class="step-num">03</div><h4>Formula Memorization</h4><p>Study 5 formulas per day. Use flashcards. Review every morning before school.</p></div>
+        <div class="plan-step"><div class="step-num">04</div><h4>Easy Questions First</h4><p>Focus on getting all easy and medium questions correct before tackling hard ones.</p></div>
+      </div>
+    </div>
+    <div class="score-plan reveal">
+      <div class="score-range">📊 500–600 Range</div>
+      <h3>Sharpening Your Skills</h3>
+      <div class="plan-steps">
+        <div class="plan-step"><div class="step-num">01</div><h4>Advanced Math Focus</h4><p>Quadratics, systems of equations, and functions are your biggest opportunity areas.</p></div>
+        <div class="plan-step"><div class="step-num">02</div><h4>Speed Training</h4><p>Time yourself on 10-question sets. Build speed without sacrificing accuracy.</p></div>
+        <div class="plan-step"><div class="step-num">03</div><h4>Desmos Mastery</h4><p>Learn to solve systems and quadratics visually on Desmos. This alone can add 50 points.</p></div>
+        <div class="plan-step"><div class="step-num">04</div><h4>Error Log</h4><p>Keep a notebook of every wrong answer. Write why you got it wrong. Review weekly.</p></div>
+      </div>
+    </div>
+    <div class="score-plan reveal">
+      <div class="score-range">📊 600–700 Range</div>
+      <h3>Breaking Through to the Next Level</h3>
+      <div class="plan-steps">
+        <div class="plan-step"><div class="step-num">01</div><h4>Hard Question Strategy</h4><p>Practice the hardest 5 questions from each section type. Learn the patterns test makers use.</p></div>
+        <div class="plan-step"><div class="step-num">02</div><h4>Geometry & Trig Deep Dive</h4><p>Most students at this level lose points on circles, triangles, and trig. Lock these down.</p></div>
+        <div class="plan-step"><div class="step-num">03</div><h4>Full Mock Tests</h4><p>Take a full timed practice test weekly. Simulate real test conditions — no phone, no breaks.</p></div>
+        <div class="plan-step"><div class="step-num">04</div><h4>Trap Avoidance</h4><p>At this level, careless errors and traps cost you. Slow down on medium questions.</p></div>
+      </div>
+    </div>
+    <div class="score-plan reveal">
+      <div class="score-range">🏆 700–800 Range</div>
+      <h3>Perfecting Your Score</h3>
+      <div class="plan-steps">
+        <div class="plan-step"><div class="step-num">01</div><h4>Zero Careless Errors</h4><p>At this level, every point matters. Build a system to double-check every answer before submitting.</p></div>
+        <div class="plan-step"><div class="step-num">02</div><h4>Hardest 10% of Questions</h4><p>Study only the hardest SAT questions. These are where 700+ students differentiate themselves.</p></div>
+        <div class="plan-step"><div class="step-num">03</div><h4>Advanced Desmos</h4><p>Use sliders, regressions, and intersections to solve problems other students solve algebraically.</p></div>
+        <div class="plan-step"><div class="step-num">04</div><h4>Mental Stamina</h4><p>Practice 2+ hour focused study sessions. Build the mental endurance for test day.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== STUDY PLAN / TIMETABLE PAGE ==================== -->
+<div class="page" id="page-study-plan">
+  <div class="page-hero">
+    <div class="page-hero-label">📅 Study Plan & Timetable</div>
+    <h1>Your Study Timetable</h1>
+    <p>Generate your weekly study schedule, edit it, and build your 30, 60, or 90-day study plan.</p>
+  </div>
+
+  <!-- TIMETABLE GENERATOR -->
+  <div class="tt-generator">
+    <h3>🗓️ Generate Your Weekly Timetable</h3>
+    <p style="color:var(--gray);font-size:0.85rem;margin-bottom:1.2rem;">Fill in your details to auto-generate a personalized study timetable, then edit it manually by clicking any cell.</p>
+    <div class="tt-form">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="ttName" placeholder="e.g., Emmanuel">
+      </div>
+      <div class="form-group">
+        <label>Study Hours Per Day</label>
+        <select id="ttHours">
+          <option value="1">1 hour/day</option>
+          <option value="2" selected>2 hours/day</option>
+          <option value="3">3 hours/day</option>
+          <option value="4">4 hours/day</option>
+          <option value="5">5 hours/day</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Preferred Study Time</label>
+        <select id="ttTime">
+          <option value="morning">Morning (6–10 AM)</option>
+          <option value="afternoon">Afternoon (2–6 PM)</option>
+          <option value="evening" selected>Evening (6–10 PM)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Weakest Topic</label>
+        <select id="ttWeak">
+          <option value="Algebra">Algebra</option>
+          <option value="Adv. Math">Advanced Math</option>
+          <option value="Geometry">Geometry</option>
+          <option value="Trig">Trigonometry</option>
+          <option value="Data">Data Analysis</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Rest Day</label>
+        <select id="ttRest">
+          <option value="Sun">Sunday</option>
+          <option value="Sat">Saturday</option>
+          <option value="None">No Rest Day</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="generateTimetable()">⚡ Generate Timetable</button>
+      <button class="btn btn-outline" onclick="clearTimetable()">🗑️ Clear All</button>
+      <button class="btn btn-outline-dark" onclick="printTimetable()">🖨️ Print Timetable</button>
+    </div>
+  </div>
+
+  <!-- MANUAL TIMETABLE EDIT -->
+  <div class="timetable-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1rem;">
+      <h3 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--navy);font-size:1.2rem;">📅 Weekly Study Schedule — Click Cells to Edit</h3>
+      <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:0.75rem;color:var(--gray);">Subject:</span>
+        <select id="subjectSelect" style="background:#fff;border:1.5px solid var(--border);color:var(--navy);border-radius:8px;padding:0.3rem 0.6rem;font-size:0.78rem;font-family:'Plus Jakarta Sans',sans-serif;outline:none;">
+          <option value="Algebra">📐 Algebra</option>
+          <option value="Adv. Math">🔢 Adv. Math</option>
+          <option value="Geometry">📏 Geometry</option>
+          <option value="Trig">📐 Trig</option>
+          <option value="Data">📊 Data</option>
+          <option value="Practice Test">📝 Practice Test</option>
+          <option value="Review">🔄 Review</option>
+          <option value="Desmos">📊 Desmos</option>
+          <option value="Break">☕ Break</option>
+        </select>
+      </div>
+    </div>
+    <div style="overflow-x:auto;">
+      <div class="timetable-grid" id="timetableGrid"></div>
+    </div>
+  </div>
+
+  <!-- STUDY PLAN -->
+  <div class="study-plan-page">
+    <h2 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--navy);font-size:1.8rem;margin-bottom:0.5rem;">Study Plan</h2>
+    <p style="color:var(--gray);margin-bottom:1.5rem;font-size:0.9rem;">Choose your plan duration and follow each day's focus.</p>
+    <div class="plan-tabs">
+      <button class="btn btn-primary" onclick="showPlanDays(30, this)">30 Days</button>
+      <button class="btn btn-outline" onclick="showPlanDays(60, this)">60 Days</button>
+      <button class="btn btn-outline" onclick="showPlanDays(90, this)">90 Days</button>
+    </div>
+    <div id="planContainer"></div>
+  </div>
+</div>
+
+<!-- ==================== COUNTDOWN PAGE ==================== -->
+<div class="page" id="page-countdown">
+  <div class="page-hero">
+    <div class="page-hero-label">⏰ Exam Countdown</div>
+    <h1>SAT Exam Countdown</h1>
+    <p>Set your exam date and watch the countdown. Every second counts.</p>
+  </div>
+  <div class="countdown-page">
+    <div class="countdown-setup" id="countdownSetup">
+      <div style="font-size:3rem;margin-bottom:1rem;">⏰</div>
+      <h2>Set Your SAT Date</h2>
+      <p>Enter your exam name and date to start the countdown</p>
+      <div class="form-group">
+        <label>Exam Name</label>
+        <input type="text" id="examName" placeholder="e.g., SAT March 2026" value="SAT Exam">
+      </div>
+      <div class="form-group">
+        <label>Exam Date</label>
+        <input type="date" id="examDate">
+      </div>
+      <div class="form-group">
+        <label>Target Score</label>
+        <input type="number" id="targetScore" placeholder="e.g., 1400" min="400" max="1600">
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;" onclick="startCountdown()">Start Countdown 🚀</button>
+    </div>
+
+    <div class="countdown-display" id="countdownDisplay" style="display:none;">
+      <div style="font-size:3rem;margin-bottom:1rem;animation:fadeUp 0.5s ease;">🎯</div>
+      <p style="font-size:0.82rem;color:var(--gray2);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem;">Countdown to</p>
+      <div class="exam-name-display" id="examNameDisplay"></div>
+      <div class="exam-date-display" id="examDateDisplay"></div>
+      <div class="countdown-numbers">
+        <div class="count-block"><div class="count-num" id="cdDays">--</div><div class="count-label">Days</div></div>
+        <div class="count-block"><div class="count-num" id="cdHours">--</div><div class="count-label">Hours</div></div>
+        <div class="count-block"><div class="count-num" id="cdMins">--</div><div class="count-label">Minutes</div></div>
+        <div class="count-block"><div class="count-num" id="cdSecs">--</div><div class="count-label">Seconds</div></div>
+      </div>
+      <div id="targetScoreDisplay" style="font-size:0.9rem;color:var(--gray);margin-bottom:2rem;"></div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-outline" onclick="resetCountdown()">Set New Date</button>
+        <button class="btn btn-primary" onclick="showPage('study-plan');setActiveByPage('study-plan')">📅 View Study Plan</button>
+      </div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--off);border:1.5px solid var(--border);border-radius:16px;max-width:500px;margin-left:auto;margin-right:auto;">
+        <p style="font-style:italic;color:var(--gray);font-size:0.9rem;">"Don't count the days, make the days count." — Muhammad Ali</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PROFILE PAGE ==================== -->
+<div class="page" id="page-profile">
+  <div class="page-hero">
+    <div class="page-hero-label">👤 Profile</div>
+    <h1>Your SAT Dashboard</h1>
+    <p>Track your progress, set your goals, and see how far you've come.</p>
+  </div>
+  <div class="profile-page">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="avatar" id="profileAvatar" onclick="changeAvatar()">S</div>
+        <div class="profile-info">
+          <h2 id="profileName">SAT Student</h2>
+          <p id="profileEmail">Set up your profile to get started</p>
+          <p style="font-size:0.75rem;color:var(--cyan2);margin-top:0.3rem;">Member since 2026</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div class="form-group"><label>Your Name</label><input type="text" id="pName" placeholder="Enter your name" oninput="updateProfile()"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="pEmail" placeholder="your@email.com" oninput="updateProfile()"></div>
+        <div class="form-group"><label>Current SAT Score (estimate)</label><input type="number" id="pCurrentScore" placeholder="e.g., 850" min="400" max="1600" oninput="updateProfileStats()"></div>
+        <div class="form-group"><label>Target SAT Score</label><input type="number" id="pTargetScore" placeholder="e.g., 1400" min="400" max="1600" oninput="updateProfileStats()"></div>
+      </div>
+      <div class="profile-stats">
+        <div class="p-stat"><div class="p-stat-num" id="pStatCurrent">—</div><div class="p-stat-label">Current Score</div></div>
+        <div class="p-stat"><div class="p-stat-num" id="pStatTarget">—</div><div class="p-stat-label">Target Score</div></div>
+        <div class="p-stat"><div class="p-stat-num" id="pStatGap">—</div><div class="p-stat-label">Points to Gain</div></div>
+        <div class="p-stat"><div class="p-stat-num" id="pStatPct">—</div><div class="p-stat-label">Progress %</div></div>
+      </div>
+    </div>
+    <div class="profile-card">
+      <h3 style="font-family:'DM Serif Display',serif;font-weight:400;margin-bottom:1.5rem;color:var(--navy);font-size:1.2rem;">📊 Topic Progress</h3>
+      <div id="topicProgress"></div>
+    </div>
+    <div class="profile-card">
+      <h3 style="font-family:'DM Serif Display',serif;font-weight:400;margin-bottom:1.5rem;color:var(--navy);font-size:1.2rem;">🎯 Quick Actions</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.8rem;">
+        <button class="btn btn-outline" onclick="showPage('formulas');setActiveByPage('formulas')" style="justify-content:center;">📘 Study Formulas</button>
+        <button class="btn btn-outline" onclick="showPage('countdown');setActiveByPage('countdown')" style="justify-content:center;">⏰ Set Countdown</button>
+        <button class="btn btn-outline" onclick="showPage('study-plan');setActiveByPage('study-plan')" style="justify-content:center;">📅 Timetable</button>
+        <button class="btn btn-primary" onclick="showPage('desmos');setActiveByPage('desmos')" style="justify-content:center;">📊 Open Desmos</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DESMOS PAGE ==================== -->
+<div class="page" id="page-desmos">
+  <div class="page-hero">
+    <div class="page-hero-label">📊 Calculator</div>
+    <h1>Desmos Graphing Calculator</h1>
+    <p>Practice with the exact same Desmos calculator used on the digital SAT. Get comfortable before test day.</p>
+  </div>
+  <div class="desmos-page">
+    <div class="desmos-container">
+      <div class="desmos-header">
+        <div>
+          <h3 style="font-family:'DM Serif Display',serif;font-weight:400;color:var(--navy);">🖩 Desmos Graphing Calculator</h3>
+          <p style="font-size:0.8rem;color:var(--gray);margin-top:0.2rem;">Same tool used in the actual Digital SAT Exam</p>
+        </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <a href="https://www.desmos.com/calculator" target="_blank" class="btn btn-outline" style="font-size:0.8rem;padding:0.5rem 1rem;">Open Full Screen ↗</a>
+          <a href="https://www.desmos.com/scientific" target="_blank" class="btn btn-outline" style="font-size:0.8rem;padding:0.5rem 1rem;">Scientific Calc ↗</a>
+        </div>
+      </div>
+      <div class="desmos-iframe-wrap">
+        <iframe src="https://www.desmos.com/calculator" title="Desmos Graphing Calculator" allow="fullscreen" loading="lazy"></iframe>
+      </div>
+      <div class="desmos-cta">
+        <h2>Master Desmos for the SAT</h2>
+        <p>The Desmos calculator is one of the most powerful tools on the digital SAT. Learn to use it strategically and you can solve complex problems in seconds.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:700px;margin:0 auto 2rem;text-align:left;">
+          <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.2rem;">
+            <div style="color:var(--blue);font-weight:700;margin-bottom:0.5rem;">📈 Graph Equations</div>
+            <p style="font-size:0.8rem;color:var(--gray);">Plot any equation. Find intersections, zeros, and maximums visually.</p>
+          </div>
+          <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.2rem;">
+            <div style="color:var(--blue);font-weight:700;margin-bottom:0.5rem;">🔍 Solve Systems</div>
+            <p style="font-size:0.8rem;color:var(--gray);">Graph two equations and find their intersection instead of solving algebraically.</p>
+          </div>
+          <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.2rem;">
+            <div style="color:var(--blue);font-weight:700;margin-bottom:0.5rem;">📐 Geometry</div>
+            <p style="font-size:0.8rem;color:var(--gray);">Use sliders and geometry tools to visualize shapes and measurements.</p>
+          </div>
+        </div>
+        <div style="background:var(--navy);border-radius:16px;padding:1.5rem;max-width:500px;margin:0 auto;">
+          <div style="font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--cyan2);margin-bottom:0.5rem;">🚀 Zenova Desmos Website Coming Soon!</div>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:1rem;">We're building a dedicated Desmos tutorial website — <strong style="color:white;">Zenova SAT Prep (Desmos)</strong>. Register now to be notified when it launches!</p>
+          <button class="btn btn-blue" onclick="showPage('register');setActiveByPage('register')" style="justify-content:center;width:100%;">Register for Early Access →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== BLOG PAGE ==================== -->
+<div class="page" id="page-blog">
+  <div class="page-hero">
+    <div class="page-hero-label">📝 Blog</div>
+    <h1>Zenova Blog & Updates</h1>
+    <p>Latest from the Zenova ecosystem — SAT tips, brand updates, and what's coming next.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card reveal" onclick="openBlog('zenova')">
+      <div class="blog-thumb navy">
+        <!-- Zenova company visual -->
+        <svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="45" r="32" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <text x="60" y="57" text-anchor="middle" font-size="36" font-weight="900" fill="url(#zg1)" font-family="serif" font-style="italic">Z</text>
+          <defs><linearGradient id="zg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+        </svg>
+        <div class="blog-thumb-label">Company</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">Company</span>
+        <h3>Introducing Zenova — Where Ideas Become Impact</h3>
+        <p>Learn about the Zenova ecosystem, our mission to empower students and creators, and the brands we're building.</p>
+        <div class="blog-meta">Zenova Team · Feb 2026</div>
+      </div>
+    </div>
+    <div class="blog-card reveal" onclick="openBlog('study')">
+      <div class="blog-thumb teal">
+        <svg width="120" height="90" viewBox="0 0 120 90" fill="none">
+          <rect x="30" y="20" width="60" height="50" rx="6" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <line x1="40" y1="35" x2="80" y2="35" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+          <line x1="40" y1="45" x2="75" y2="45" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+          <line x1="40" y1="55" x2="68" y2="55" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+        </svg>
+        <div class="blog-thumb-label">Zenova Study</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">Zenova Study</span>
+        <h3>Zenova Study: Your All-In-One Academic Companion</h3>
+        <p>Track goals, manage your timetable, and crush every exam. Discover everything Zenova Study has to offer for free.</p>
+        <div class="blog-meta">Zenova Team · Feb 2026</div>
+      </div>
+    </div>
+    <div class="blog-card reveal" onclick="openBlog('media')">
+      <div class="blog-thumb red">
+        <svg width="120" height="90" viewBox="0 0 120 90" fill="none">
+          <circle cx="60" cy="45" r="28" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <polygon points="52,32 80,45 52,58" fill="rgba(255,255,255,0.9)"/>
+        </svg>
+        <div class="blog-thumb-label">Zenova Media</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">Zenova Media</span>
+        <h3>Zenova Media: Educational Content That Inspires</h3>
+        <p>Our YouTube channel is your go-to place for study tips, productivity hacks, and digital skills for students.</p>
+        <div class="blog-meta">Zenova Team · Feb 2026</div>
+      </div>
+    </div>
+    <div class="blog-card reveal" onclick="openBlog('desmosblog')">
+      <div class="blog-thumb dark">
+        <svg width="140" height="90" viewBox="0 0 140 90" fill="none">
+          <polyline points="20,70 45,30 70,50 95,15 120,40" stroke="rgba(99,179,237,0.8)" stroke-width="2.5" fill="none"/>
+          <circle cx="95" cy="15" r="4" fill="#63b3ed"/>
+          <circle cx="45" cy="30" r="3" fill="#63b3ed" opacity="0.7"/>
+          <line x1="20" y1="75" x2="130" y2="75" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+          <line x1="20" y1="15" x2="20" y2="75" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        </svg>
+        <div class="blog-thumb-label">Coming Soon</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">Coming Soon</span>
+        <h3>Zenova SAT Prep (Desmos) — Register for Early Access</h3>
+        <p>Our dedicated Desmos tutorial platform is in development. Be first to know when it launches by registering today.</p>
+        <div class="blog-meta">Zenova Team · Coming 2026</div>
+      </div>
+    </div>
+    <div class="blog-card reveal" onclick="openBlog('satprep')">
+      <div class="blog-thumb navy">
+        <svg width="120" height="90" viewBox="0 0 120 90" fill="none">
+          <text x="60" y="52" text-anchor="middle" font-size="18" font-weight="700" fill="rgba(255,255,255,0.9)" font-family="monospace">x = -b±√(b²-4ac)</text>
+          <text x="60" y="68" text-anchor="middle" font-size="13" fill="rgba(255,255,255,0.5)" font-family="monospace">──────────────</text>
+          <text x="60" y="80" text-anchor="middle" font-size="13" fill="rgba(56,189,248,0.8)" font-family="monospace">2a</text>
+        </svg>
+        <div class="blog-thumb-label">SAT Prep</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">SAT Prep</span>
+        <h3>Why Zenova SAT Prep is Different From Every Other Website</h3>
+        <p>Most formula websites just list formulas. We give you context, examples, strategies, and a full ecosystem to support you.</p>
+        <div class="blog-meta">Zenova Team · Feb 2026</div>
+      </div>
+    </div>
+    <div class="blog-card reveal" onclick="openBlog('tips')">
+      <div class="blog-thumb teal">
+        <svg width="120" height="90" viewBox="0 0 120 90" fill="none">
+          <circle cx="60" cy="38" r="20" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+          <path d="M60 20 L60 18 M60 58 L60 56 M78 38 L80 38 M40 38 L42 38" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+          <circle cx="60" cy="38" r="8" fill="rgba(255,255,255,0.7)"/>
+          <rect x="53" y="57" width="14" height="5" rx="2" fill="rgba(255,255,255,0.4)"/>
+          <rect x="55" y="63" width="10" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+        <div class="blog-thumb-label">SAT Tips</div>
+      </div>
+      <div class="blog-content">
+        <span class="blog-tag">SAT Tips</span>
+        <h3>5 SAT Math Strategies Every 700+ Scorer Uses</h3>
+        <p>From Desmos shortcuts to time management hacks — the strategies that separate good scores from great ones.</p>
+        <div class="blog-meta">Zenova Team · Feb 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== REGISTER PAGE ==================== -->
+<div class="page" id="page-register">
+  <div class="register-page">
+    <div class="register-card">
+      <div class="logo-wrap">
+        <div style="width:50px;height:50px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;border:2px solid var(--border2);">
+          <svg viewBox="0 0 100 100" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="zg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+            <text x="50" y="68" text-anchor="middle" font-size="54" font-weight="900" fill="url(#zg2)" font-family="serif" font-style="italic">Z</text>
+          </svg>
+        </div>
+        <div style="font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--navy);">Zenova <span style="color:var(--blue);">SAT Prep</span></div>
+      </div>
+      <h2>Join Zenova SAT Prep</h2>
+      <p class="subtitle">Register for early access to Zenova SAT Prep (Desmos) and updates from the Zenova ecosystem.</p>
+      
+      <div id="registerForm">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="regName" placeholder="Your full name"></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" id="regEmail" placeholder="your@email.com"></div>
+        </div>
+        <div class="form-group"><label>Phone (optional)</label><input type="tel" id="regPhone" placeholder="+234..."></div>
+        <div class="form-group">
+          <label>Country</label>
+          <select id="regCountry">
+            <option value="">Select your country</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Ghana">Ghana</option>
+            <option value="Kenya">Kenya</option>
+            <option value="South Africa">South Africa</option>
+            <option value="USA">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Canada">Canada</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>SAT Exam Date (if known)</label><input type="date" id="regSatDate"></div>
+        <div class="form-group">
+          <label>What are you most interested in?</label>
+          <select id="regInterest">
+            <option value="formulas">SAT Math Formulas</option>
+            <option value="desmos">Zenova SAT Prep (Desmos)</option>
+            <option value="all">Full Ecosystem — Everything</option>
+            <option value="study">Study Plans & Timetable</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message or Questions (optional)</label><textarea id="regMessage" rows="3" placeholder="Anything you want to tell us?"></textarea></div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;" onclick="submitRegistration()">Register Now 🚀</button>
+        <p style="text-align:center;font-size:0.75rem;color:var(--gray);margin-top:1rem;">By registering, you'll receive updates from Zenova. No spam, ever.</p>
+      </div>
+
+      <div class="success-msg" id="regSuccess">
+        <div class="check">🎉</div>
+        <h3>You're Registered!</h3>
+        <p>Thank you for joining Zenova. We'll send you updates to <span id="regEmailConfirm" style="color:var(--blue);"></span> when Zenova SAT Prep (Desmos) launches and with other exciting updates!</p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+          <a href="https://emmnueljohn.github.io/Zenova-Study/" target="_blank" class="btn btn-outline" style="font-size:0.85rem;">Visit Zenova Study</a>
+          <a href="https://www.youtube.com/channel/UCa_ojEhbLwwsK1JO6_NqRLw" target="_blank" class="btn btn-outline" style="font-size:0.85rem;">Watch Zenova Media</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PDF PAGE ==================== -->
+<div class="page" id="page-pdf">
+  <div class="page-hero">
+    <div class="page-hero-label">📥 Formula Sheet</div>
+    <h1>Free SAT Math Formula Sheet</h1>
+    <p>Download our beautifully designed, Zenova-branded formula sheet. Print it, study it, ace the SAT.</p>
+  </div>
+  <div class="pdf-page">
+    <div style="text-align:center;margin-bottom:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="printPDF()">🖨️ Print / Save as PDF</button>
+      <button class="btn btn-outline" onclick="showPage('formulas');setActiveByPage('formulas')">📘 Full Formula Library</button>
+    </div>
+    <div class="pdf-preview" id="pdfContent">
+      <div class="pdf-header">
+        <div class="pdf-logo">Zenova <span>SAT Prep</span></div>
+        <div class="pdf-title">SAT Math Formula Reference Sheet · zenovaofficial188@gmail.com</div>
+      </div>
+      <div class="pdf-body">
+        <div class="pdf-section">
+          <h3>📐 ALGEBRA</h3>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Slope</span><span class="pdf-f-eq">m = (y₂-y₁)/(x₂-x₁)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Slope-Intercept Form</span><span class="pdf-f-eq">y = mx + b</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Point-Slope Form</span><span class="pdf-f-eq">y - y₁ = m(x - x₁)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Standard Form</span><span class="pdf-f-eq">Ax + By = C</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Distance Formula</span><span class="pdf-f-eq">d = √[(x₂-x₁)² + (y₂-y₁)²]</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Midpoint Formula</span><span class="pdf-f-eq">M = ((x₁+x₂)/2, (y₁+y₂)/2)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Percent Change</span><span class="pdf-f-eq">(New - Old)/Old × 100%</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Simple Interest</span><span class="pdf-f-eq">I = Prt</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Rate × Time = Distance</span><span class="pdf-f-eq">d = rt</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Proportion</span><span class="pdf-f-eq">a/b = c/d → ad = bc</span></div>
+        </div>
+        <div class="pdf-section">
+          <h3>🔢 ADVANCED MATH</h3>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Quadratic Formula</span><span class="pdf-f-eq">x = (-b ± √(b²-4ac)) / 2a</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Discriminant</span><span class="pdf-f-eq">Δ = b² - 4ac</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Vertex Form</span><span class="pdf-f-eq">y = a(x-h)² + k; vertex=(h,k)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Standard Quadratic</span><span class="pdf-f-eq">y = ax² + bx + c</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Axis of Symmetry</span><span class="pdf-f-eq">x = -b/2a</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Difference of Squares</span><span class="pdf-f-eq">a² - b² = (a+b)(a-b)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Perfect Square</span><span class="pdf-f-eq">(a±b)² = a²±2ab+b²</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Exponential Growth</span><span class="pdf-f-eq">y = a(1+r)^t</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Exponential Decay</span><span class="pdf-f-eq">y = a(1-r)^t</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Laws of Exponents</span><span class="pdf-f-eq">aᵐ·aⁿ=aᵐ⁺ⁿ; aᵐ/aⁿ=aᵐ⁻ⁿ; (aᵐ)ⁿ=aᵐⁿ</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Arithmetic Sequence</span><span class="pdf-f-eq">aₙ = a₁ + (n-1)d</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Geometric Sequence</span><span class="pdf-f-eq">aₙ = a₁ · rⁿ⁻¹</span></div>
+        </div>
+        <div class="pdf-section">
+          <h3>📏 GEOMETRY & TRIGONOMETRY</h3>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Pythagorean Theorem</span><span class="pdf-f-eq">a² + b² = c²</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Circle Area</span><span class="pdf-f-eq">A = πr²</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Circle Circumference</span><span class="pdf-f-eq">C = 2πr = πd</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Arc Length</span><span class="pdf-f-eq">L = rθ (radians) = (θ/360)·2πr</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Sector Area</span><span class="pdf-f-eq">A = (θ/360)·πr²</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Triangle Area</span><span class="pdf-f-eq">A = ½bh</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Rectangle Area</span><span class="pdf-f-eq">A = lw</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Trapezoid Area</span><span class="pdf-f-eq">A = ½(b₁+b₂)h</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Sphere Volume</span><span class="pdf-f-eq">V = (4/3)πr³</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Cylinder Volume</span><span class="pdf-f-eq">V = πr²h</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Cone Volume</span><span class="pdf-f-eq">V = (1/3)πr²h</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Sine (SOH)</span><span class="pdf-f-eq">sin θ = Opposite/Hypotenuse</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Cosine (CAH)</span><span class="pdf-f-eq">cos θ = Adjacent/Hypotenuse</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Tangent (TOA)</span><span class="pdf-f-eq">tan θ = Opposite/Adjacent</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Pythagorean Identity</span><span class="pdf-f-eq">sin²θ + cos²θ = 1</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Complementary Angles</span><span class="pdf-f-eq">sin θ = cos(90°-θ)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Special Triangle 30-60-90</span><span class="pdf-f-eq">sides: 1 : √3 : 2</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Special Triangle 45-45-90</span><span class="pdf-f-eq">sides: 1 : 1 : √2</span></div>
+        </div>
+        <div class="pdf-section">
+          <h3>📊 DATA & STATISTICS</h3>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Mean (Average)</span><span class="pdf-f-eq">x̄ = Σx / n</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Weighted Mean</span><span class="pdf-f-eq">x̄ = Σ(w·x) / Σw</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Probability</span><span class="pdf-f-eq">P(A) = favorable outcomes / total outcomes</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Compound Probability (AND)</span><span class="pdf-f-eq">P(A and B) = P(A) × P(B)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Compound Probability (OR)</span><span class="pdf-f-eq">P(A or B) = P(A) + P(B) - P(A and B)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Combinations</span><span class="pdf-f-eq">nCr = n! / (r!(n-r)!)</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Permutations</span><span class="pdf-f-eq">nPr = n! / (n-r)!</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Relative Frequency</span><span class="pdf-f-eq">freq/total × 100%</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Rate</span><span class="pdf-f-eq">Rate = Distance / Time</span></div>
+          <div class="pdf-formula-row"><span class="pdf-f-name">Unit Rate</span><span class="pdf-f-eq">Total cost / number of units</span></div>
+        </div>
+        <div style="text-align:center;padding-top:1rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--gray2);">
+          Zenova SAT Prep · zenovaofficial188@gmail.com · © 2026 Zenova
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BLOG MODAL -->
+<div class="modal-overlay" id="blogModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div>
+        <span class="blog-tag" id="modalTag"></span>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:1.4rem;font-weight:400;margin-top:0.5rem;" id="modalTitle"></h2>
+      </div>
+      <button class="modal-close" onclick="closeBlog()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Zenova <span>SAT Prep</span></div>
+      <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.7;margin-bottom:1rem;">Study smarter. Score higher. Built by Zenova for serious SAT students everywhere.</p>
+      <a href="mailto:zenovaofficial188@gmail.com" style="color:var(--cyan2);font-size:0.8rem;text-decoration:none;">zenovaofficial188@gmail.com</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Zenova Ecosystem</div>
+      <a href="https://emmnueljohn.github.io/Zenova/" target="_blank" class="footer-link">🌐 Zenova (Main Company)</a>
+      <a href="https://emmnueljohn.github.io/Zenova-Study/" target="_blank" class="footer-link">📖 Zenova Study</a>
+      <a href="https://www.youtube.com/channel/UCa_ojEhbLwwsK1JO6_NqRLw" target="_blank" class="footer-link">▶️ Zenova Media (YouTube)</a>
+      <span class="footer-link" style="color:#60a5fa;cursor:default;">🔢 Zenova SAT Prep Desmos <span style="font-size:0.7rem;color:rgba(255,255,255,0.25);">(coming soon)</span></span>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <button onclick="showPage('formulas');setActiveByPage('formulas')" class="footer-link">📘 Formula Library</button>
+      <button onclick="showPage('strategy');setActiveByPage('strategy')" class="footer-link">🧠 Strategies</button>
+      <button onclick="showPage('study-plan');setActiveByPage('study-plan')" class="footer-link">📅 Timetable</button>
+      <button onclick="showPage('countdown');setActiveByPage('countdown')" class="footer-link">⏰ Countdown</button>
+      <button onclick="showPage('register');setActiveByPage('register')" class="footer-link" style="color:var(--cyan2);font-weight:600;">🚀 Register Now</button>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© 2026 Zenova SAT Prep. A product of the Zenova ecosystem. Built with ❤️ for students.</p>
+    <p class="footer-copyright">Privacy Policy · Terms of Service</p>
+  </div>
+</footer>
+
+<script>
+// ============ NAVIGATION ============
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) { page.classList.add('active'); window.scrollTo(0,0); }
+  if (id === 'study-plan' && !studyPlanInit) initStudyPlan();
+  if (id === 'study-plan' && !timetableInit) initTimetable();
+  if (id === 'profile' && !profileInit) initProfile();
+  if (id === 'formulas' && !formulasInit) initFormulas();
+  document.getElementById('navMenu').classList.remove('open');
+  setTimeout(triggerReveal, 100);
+}
+function setActive(el) {
+  document.querySelectorAll('.nav-menu button, .nav-menu a').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+function setActiveByPage(id) {
+  document.querySelectorAll('.nav-menu button, .nav-menu a').forEach(b => {
+    b.classList.remove('active');
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
+  });
+}
+function toggleMenu() { document.getElementById('navMenu').classList.toggle('open'); }
+
+// ============ REVEAL ============
+function triggerReveal() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', triggerReveal);
+setTimeout(triggerReveal, 300);
+
+// ============ FORMULA DATA ============
+const formulaData = {
+  algebra: [
+    {name:"Slope of a Line",eq:"m = (y₂-y₁)/(x₂-x₁)",when:"Any time you need the rate of change between two points, or when finding slope from a graph or table.",example:"Points (2,3) and (6,11): m = (11-3)/(6-2) = 8/4 = 2",mistake:"Don't mix up which is (x₁,y₁) and (x₂,y₂). Either pair first is fine — just be consistent.",tip:"On the SAT, slope = rise/run. You can count boxes on a graph instead of calculating."},
+    {name:"Slope-Intercept Form",eq:"y = mx + b",when:"Writing, reading, or graphing any linear equation where slope and y-intercept are needed.",example:"m=3, b=−5 → y = 3x − 5. The line crosses y-axis at (0,−5).",mistake:"b is where the line crosses the y-axis (set x=0). Students often confuse m and b.",tip:"To find x-intercept, set y=0 and solve. To find y-intercept, set x=0."},
+    {name:"Point-Slope Form",eq:"y − y₁ = m(x − x₁)",when:"When you're given a point and a slope but not the y-intercept.",example:"Slope=4, point (1,3): y−3 = 4(x−1) → y = 4x−1",mistake:"Don't forget the minus sign in (x−x₁). It's y−3, not y+3 even if the point is (1,3).",tip:"Use this form when the SAT gives you a point and slope. Rewrite to slope-intercept if needed."},
+    {name:"Standard Form of a Line",eq:"Ax + By = C",when:"When questions give equations in this format, or ask for intercepts.",example:"2x + 3y = 12. x-intercept: set y=0 → x=6. y-intercept: set x=0 → y=4.",mistake:"Don't assume A/B = slope in this form. Slope = −A/B.",tip:"Divide through: x/(C/A) + y/(C/B) = 1 reveals intercepts instantly."},
+    {name:"Distance Formula",eq:"d = √[(x₂−x₁)² + (y₂−y₁)²]",when:"Finding the straight-line distance between any two coordinate points.",example:"(1,2) to (4,6): d = √[(4-1)²+(6-2)²] = √[9+16] = √25 = 5",mistake:"Students forget to square both differences before adding under the radical.",tip:"Recognize Pythagorean triples (3-4-5, 5-12-13) to skip the calculation entirely."},
+    {name:"Midpoint Formula",eq:"M = ((x₁+x₂)/2, (y₁+y₂)/2)",when:"Finding the center point between two coordinates.",example:"(2,4) and (8,10): M = ((2+8)/2, (4+10)/2) = (5, 7)",mistake:"Don't subtract — it's always the average (add and divide by 2).",tip:"If given the midpoint and one endpoint, use algebra: x₁+x₂=2Mx → solve for unknown."},
+    {name:"Percent",eq:"Part/Whole × 100",when:"Any percentage calculation — finding a part, a whole, or a percent.",example:"What % of 80 is 20? → 20/80 × 100 = 25%",mistake:"Confusing 'percent of' with 'percent more than'. 120% of 50 = 60; 50% more than 50 = 75.",tip:"For 'X% of Y', translate directly: X/100 × Y. Always works."},
+    {name:"Percent Change",eq:"(New − Old) / Old × 100%",when:"SAT word problems about price changes, population growth, discount, etc.",example:"Price goes from $40 to $52: (52-40)/40 × 100 = 30% increase",mistake:"Using New as denominator instead of Old.",tip:"For multiple percent changes, don't add percentages. Apply each separately."},
+    {name:"Systems of Equations",eq:"Substitution or Elimination",when:"Two equations, two unknowns. Any time the SAT asks for x+y or xy.",example:"x+y=10, x−y=2 → Add: 2x=12 → x=6, y=4",mistake:"Forgetting to substitute back to find the second variable.",tip:"With Desmos: graph both lines and click intersection. Instant answer!"},
+    {name:"Ratio & Proportion",eq:"a/b = c/d → ad = bc",when:"Proportional relationships, similar triangles, unit conversions, scaling problems.",example:"If 3 books cost $12, how much for 7? → 3/12 = 7/x → x = $28",mistake:"Cross multiply wrong: it's ad=bc, not ac=bd.",tip:"Set up ratios in the same unit order on both sides to avoid mistakes."},
+    {name:"Simple Interest",eq:"I = Prt",when:"Interest problems where interest is not compounded.",example:"$1000 at 5% for 3 years: I = 1000 × 0.05 × 3 = $150",mistake:"Forgetting to convert percentage to decimal: 5% = 0.05, not 5.",tip:"Total amount = P + I = P(1 + rt). Read whether question asks for interest or total."},
+    {name:"Compound Interest",eq:"A = P(1 + r/n)^(nt)",when:"When interest is compounded periodically (annually, monthly, etc.)",example:"$1000 at 4% compounded annually for 2 years: A = 1000(1.04)² = $1081.60",mistake:"Forgetting to divide r by n (number of compounding periods per year).",tip:"Annual compounding (n=1) is most common on SAT. Just A = P(1+r)^t."},
+    {name:"Rate × Time = Distance",eq:"d = rt",when:"Any motion, speed, or travel word problem.",example:"Car travels 60 mph for 2.5 hours: d = 60 × 2.5 = 150 miles",mistake:"Mixing units: make sure rate and time are in the same unit (mph + hours).",tip:"Rearrange for any variable: r = d/t or t = d/r. Draw a table for multi-trip problems."},
+    {name:"Work Rate Formula",eq:"1/t₁ + 1/t₂ = 1/T",when:"Two workers/machines working together to complete a job.",example:"Worker A in 4 hrs, Worker B in 6 hrs together: 1/4 + 1/6 = 1/T → T = 12/5 = 2.4 hrs",mistake:"Adding the times instead of the rates.",tip:"Think of it as: each worker completes a fraction of the job per hour."},
+    {name:"Absolute Value",eq:"|x| = a → x = a or x = −a",when:"Equations with absolute value bars — split into two cases.",example:"|x − 3| = 5 → x − 3 = 5 or x − 3 = −5 → x = 8 or x = −2",mistake:"Forgetting the negative case. Always two solutions (unless one is extraneous).",tip:"For inequalities: |x| < a means −a < x < a; |x| > a means x < −a or x > a."},
+  ],
+  advanced: [
+    {name:"Quadratic Formula",eq:"x = (−b ± √(b²−4ac)) / 2a",when:"Solving ax²+bx+c=0 that can't be factored easily.",example:"x²+5x+6=0: a=1,b=5,c=6 → x=(−5±√(25−24))/2 = (−5±1)/2 → x=−2 or −3",mistake:"Forgetting to divide the ENTIRE expression (including ±√) by 2a, not just the radical.",tip:"Try factoring first — it's faster. Use the formula when the discriminant isn't a perfect square."},
+    {name:"Discriminant",eq:"Δ = b² − 4ac",when:"Determining the nature and number of roots without fully solving.",example:"Δ>0: 2 real roots. Δ=0: 1 real root (tangent to x-axis). Δ<0: 0 real roots (complex).",mistake:"Forgetting that Δ<0 means NO real solutions on the SAT — graph doesn't cross x-axis.",tip:"If the SAT asks 'how many x-intercepts?', calculate discriminant — fastest method."},
+    {name:"Vertex Form of Quadratic",eq:"y = a(x−h)² + k",when:"Finding the vertex, axis of symmetry, or graphing a parabola.",example:"y=2(x−3)²+1: vertex is (3,1), opens upward (a>0), axis x=3",mistake:"The vertex is (h,k) — note the sign flip: (x−3)² means h=+3, not h=−3.",tip:"If a>0, vertex is minimum. If a<0, vertex is maximum. SAT tests this frequently."},
+    {name:"Standard Form → Vertex",eq:"Axis of symmetry: x = −b/2a",when:"Finding vertex when quadratic is in standard form ax²+bx+c.",example:"y=x²+4x+1: axis = −4/(2·1) = −2. Vertex x=−2, y=(−2)²+4(−2)+1 = −3. Vertex: (−2,−3)",mistake:"Calculating the x-coordinate of axis but forgetting to plug back in to find y.",tip:"Once you have x, plug into original equation for y. Don't guess the y-coordinate."},
+    {name:"Factoring: Difference of Squares",eq:"a² − b² = (a+b)(a−b)",when:"Any expression in the form of one perfect square minus another.",example:"x²−9 = (x+3)(x−3); 4x²−25 = (2x+5)(2x−5)",mistake:"Applying to a²+b² — this does NOT factor over real numbers.",tip:"Recognize perfect squares: 1,4,9,16,25,36,49,64,81,100,121,144,169,196,225"},
+    {name:"Factoring: Perfect Square Trinomial",eq:"(a±b)² = a²±2ab+b²",when:"Recognizing and factoring trinomials that are perfect squares.",example:"x²+6x+9 = (x+3)²; x²−10x+25 = (x−5)²",mistake:"Not checking if the middle term = 2ab before assuming it's a perfect square.",tip:"Check: take √(first term) and √(last term), multiply by 2. If = middle term, it's a perfect square."},
+    {name:"Exponential Growth",eq:"y = a(1+r)^t",when:"Population growth, compound interest, bacterial growth, any increasing exponential.",example:"$500 at 6% annual growth after 4 years: y = 500(1.06)⁴ ≈ $631.24",mistake:"Confusing r (rate as decimal) with percentage. 6% → r=0.06.",tip:"If it says 'increases by 6% each year', use (1+0.06). If 'multiplied by 1.06', same thing."},
+    {name:"Exponential Decay",eq:"y = a(1−r)^t",when:"Depreciation, radioactive decay, cooling, any decreasing exponential.",example:"Car worth $20,000 depreciates at 15% per year after 3 years: y=20000(0.85)³≈$12,282",mistake:"Using (1+r) instead of (1−r) for decay. Always subtract the rate.",tip:"Half-life problems: set y=a/2, solve for t using logarithms or plugging in values."},
+    {name:"Function Notation",eq:"f(x) = expression",when:"When the SAT uses function notation — finding values, compositions, transformations.",example:"f(x)=2x+3. Find f(4): f(4)=2(4)+3=11. Find f(a+1): f(a+1)=2(a+1)+3=2a+5",mistake:"Treating f(x) as f times x — it's f OF x, meaning plug in x to evaluate.",tip:"For f(g(x)): evaluate inner function first, then use that result in outer function."},
+    {name:"Function Transformations",eq:"f(x±h) shifts left/right; f(x)±k shifts up/down",when:"Reading transformed graphs or writing equations of shifted parabolas/functions.",example:"f(x)=x². f(x−2): shifts right 2. f(x)+3: shifts up 3. f(x−2)+3: right 2, up 3.",mistake:"f(x−2) shifts RIGHT (not left). The sign inside parentheses is opposite to direction.",tip:"Vertical: y=f(x)+k → up k. Horizontal: y=f(x−h) → right h. Remember the flip."},
+    {name:"Laws of Exponents",eq:"aᵐ·aⁿ = aᵐ⁺ⁿ; aᵐ/aⁿ = aᵐ⁻ⁿ; (aᵐ)ⁿ = aᵐⁿ",when:"Simplifying expressions with the same base, or raising powers to powers.",example:"x³·x⁵ = x⁸; x⁷/x³ = x⁴; (x²)³ = x⁶",mistake:"Adding exponents when multiplying bases that are DIFFERENT (a³·b² ≠ (ab)⁵).",tip:"Negative exponent: a⁻ⁿ = 1/aⁿ. Fractional exponent: a^(1/n) = ⁿ√a."},
+    {name:"Arithmetic Sequence",eq:"aₙ = a₁ + (n−1)d",when:"Finding the nth term of a sequence where terms increase by a constant amount.",example:"Sequence: 3,7,11,15,... (d=4). Find 10th term: a₁₀ = 3+(10−1)4 = 3+36 = 39",mistake:"Using n instead of (n−1). The formula is a₁ + (n−1)d, not a₁ + nd.",tip:"Sum of arithmetic sequence: S = n/2 × (a₁ + aₙ). The SAT sometimes tests this."},
+    {name:"Geometric Sequence",eq:"aₙ = a₁ · rⁿ⁻¹",when:"Finding the nth term when each term is multiplied by a constant ratio r.",example:"Sequence: 2,6,18,54,... (r=3). 5th term: a₅ = 2·3⁴ = 2·81 = 162",mistake:"Using rⁿ instead of rⁿ⁻¹. The first term already exists, so we apply r only n−1 times.",tip:"Find r by dividing any term by the one before it: r = aₙ/aₙ₋₁."},
+    {name:"Polynomial Long Division",eq:"Dividend ÷ Divisor = Quotient + Remainder/Divisor",when:"Dividing polynomials, or when SAT asks for remainder.",example:"(x²+5x+6) ÷ (x+2) = x+3 (remainder 0)",mistake:"Forgetting to include terms with zero coefficients as placeholders.",tip:"Remainder Theorem shortcut: the remainder when f(x) is divided by (x−a) is just f(a)."},
+    {name:"Imaginary Numbers",eq:"i = √(−1); i² = −1; i³ = −i; i⁴ = 1",when:"SAT questions involving complex numbers or square roots of negative numbers.",example:"i²+i+1 = −1+i+1 = i. Powers of i cycle: i,−1,−i,1,i,−1,...",mistake:"Forgetting that i² = −1 (not 1). Always substitute i² as −1.",tip:"For large powers: divide exponent by 4, use remainder to find: 0→1, 1→i, 2→−1, 3→−i."},
+  ],
+  data: [
+    {name:"Mean (Average)",eq:"x̄ = Σx / n",when:"Finding the average of a data set, or finding a missing value given the average.",example:"Find average of 10,15,20,25: (10+15+20+25)/4 = 70/4 = 17.5",mistake:"Dividing by the wrong number of values. Count carefully, especially in tables.",tip:"If average is given, multiply by n to find the total sum. Then use total to find missing value."},
+    {name:"Median",eq:"Middle value when sorted",when:"Finding the middle value in an ordered data set.",example:"Data: 3,5,8,12,17 → Median = 8 (middle). For 4 values, average the two middle ones.",mistake:"Forgetting to sort the data before finding the median.",tip:"For even number of data points: median = average of two middle values."},
+    {name:"Mode",eq:"Most frequently occurring value",when:"Finding the most common value in a data set.",example:"Data: 2,3,3,5,7,3,8 → Mode = 3 (appears 3 times)",mistake:"Confusing mode with median. Mode = most common, Median = middle.",tip:"A data set can have more than one mode (bimodal) or no mode if all values are unique."},
+    {name:"Range",eq:"Range = Maximum − Minimum",when:"Measuring the spread of a data set.",example:"Data: 4,7,2,18,11 → Range = 18 − 2 = 16",mistake:"Using mean instead of max/min in the formula.",tip:"Range measures spread but is heavily affected by outliers. The SAT may test this."},
+    {name:"Probability",eq:"P(A) = favorable / total",when:"Any question asking for likelihood of an event occurring.",example:"Rolling a 3 on a die: P(3) = 1/6. Drawing a red card: P = 26/52 = 1/2",mistake:"Not identifying the correct total sample space (denominator).",tip:"Probability is always between 0 (impossible) and 1 (certain). Check your answer makes sense."},
+    {name:"Compound Probability (AND)",eq:"P(A and B) = P(A) × P(B)",when:"Finding probability of TWO independent events both occurring.",example:"Flipping heads and rolling a 4: P = 1/2 × 1/6 = 1/12",mistake:"Adding instead of multiplying. AND = multiply (for independent events).",tip:"For dependent events: P(A and B) = P(A) × P(B|A) — probability of B given A already happened."},
+    {name:"Compound Probability (OR)",eq:"P(A or B) = P(A) + P(B) − P(A and B)",when:"Finding probability that at least one of two events occurs.",example:"P(heart or face card): 13/52 + 12/52 − 3/52 = 22/52 = 11/26",mistake:"Forgetting to subtract the overlap P(A and B). If mutually exclusive: P(A or B) = P(A) + P(B).",tip:"For mutually exclusive events (can't both happen), the overlap is 0."},
+    {name:"Combinations",eq:"nCr = n! / (r!(n-r)!)",when:"Counting ways to choose r items from n when ORDER doesn't matter.",example:"Choose 2 from 5: 5C2 = 5!/(2!·3!) = 10",mistake:"Using permutations when order doesn't matter. Choosing a committee = combination.",tip:"nCr = nC(n-r). So 5C2 = 5C3 = 10. Use this to simplify large factorials."},
+    {name:"Permutations",eq:"nPr = n! / (n-r)!",when:"Counting arrangements where ORDER matters.",example:"Arranging 3 from 5: 5P3 = 5!/(5-3)! = 5!/2! = 60",mistake:"Using combinations when order matters. Arrangements and rankings = permutations.",tip:"All permutations of n items = n! (factorial). 5! = 120. The SAT rarely tests beyond 5!."},
+    {name:"Linear vs. Exponential Growth",eq:"Linear: y = mx+b; Exponential: y = a·bˣ",when:"Identifying whether a table or graph shows constant addition (linear) or constant multiplication (exponential).",example:"If each step adds 5: linear. If each step multiplies by 3: exponential.",mistake:"Assuming a curved graph is always exponential — check the actual growth pattern.",tip:"Linear: constant difference between y-values. Exponential: constant RATIO between y-values."},
+    {name:"Two-Way Tables",eq:"Row % = row value/row total; Col % = col value/col total",when:"Reading and analyzing frequency tables, finding conditional probabilities.",example:"Table: 40 girls, 30 boys passed; 20 girls, 10 boys failed. P(pass|girl) = 40/60 = 2/3",mistake:"Using the grand total instead of the conditional row/column total.",tip:"'Given that...' means you're doing conditional probability — look at that row or column only."},
+    {name:"Scatterplot and Line of Best Fit",eq:"y = mx + b (estimated from data)",when:"Interpreting a scatterplot, making predictions, understanding correlations.",example:"Line of best fit: y = 2x + 5. Predict y when x=10: y = 25",mistake:"Extrapolating too far beyond the data range — predictions become unreliable.",tip:"Positive slope = positive correlation. Negative slope = negative correlation. No slope = no correlation."},
+    {name:"Standard Deviation (concept)",eq:"Measures spread around the mean",when:"SAT won't ask you to calculate SD, but will ask you to compare or interpret it.",example:"Data set A: 4,5,6,7,8 (SD≈1.4). Data set B: 1,3,6,9,11 (larger SD). B is more spread out.",mistake:"Confusing standard deviation with mean. SD measures spread, not center.",tip:"Larger SD = more spread out data. Identical distributions shifted up have same SD."},
+    {name:"Weighted Average",eq:"x̄ = Σ(weight × value) / Σ(weights)",when:"Combining groups with different sizes to find an overall average.",example:"Class A: 30 students avg 80. Class B: 20 students avg 70. Combined: (30×80+20×70)/50 = 76",mistake:"Simply averaging the two averages without considering group sizes.",tip:"Always weight by the number of people/observations in each group."},
+  ],
+  geometry: [
+    {name:"Pythagorean Theorem",eq:"a² + b² = c²",when:"Finding the missing side of any right triangle. c is always the hypotenuse (opposite the right angle).",example:"Legs 3 and 4: c² = 9+16 = 25 → c = 5. Hypotenuse 13, leg 5: b² = 169−25 = 144 → b=12",mistake:"Using the formula with c as a leg instead of the hypotenuse.",tip:"Memorize Pythagorean triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25, and their multiples."},
+    {name:"Special Right Triangle: 30-60-90",eq:"Sides: 1 : √3 : 2 (short : long : hypotenuse)",when:"Right triangles with 30°, 60°, 90° angles. Very common on SAT.",example:"If short leg = 5, then long leg = 5√3 and hypotenuse = 10.",mistake:"Confusing which side corresponds to which ratio. Short leg is opposite 30°.",tip:"If you know the hypotenuse, divide by 2 for short leg, then multiply by √3 for long leg."},
+    {name:"Special Right Triangle: 45-45-90",eq:"Sides: 1 : 1 : √2 (leg : leg : hypotenuse)",when:"Isosceles right triangles (half a square). Legs are equal.",example:"If leg = 6, hypotenuse = 6√2 ≈ 8.49",mistake:"Forgetting the √2 factor on the hypotenuse.",tip:"If hypotenuse given, leg = hypotenuse/√2 = hypotenuse·√2/2."},
+    {name:"Circle: Area",eq:"A = πr²",when:"Finding the area inside a circle.",example:"Radius = 7: A = π·49 ≈ 153.94 sq units",mistake:"Using diameter instead of radius. Remember: r = d/2.",tip:"If given circumference C, find r first: r = C/2π, then use A = πr²."},
+    {name:"Circle: Circumference",eq:"C = 2πr = πd",when:"Finding the perimeter/distance around a circle.",example:"Radius = 5: C = 2π(5) = 10π ≈ 31.4",mistake:"Confusing circumference with area. C = 2πr, A = πr².",tip:"The SAT often gives one and asks for the other. Know both formulas cold."},
+    {name:"Arc Length",eq:"L = (θ/360) × 2πr = rθ (radians)",when:"Finding the length of part of a circle's circumference.",example:"Circle r=6, central angle=90°: L = (90/360)·2π·6 = (1/4)·12π = 3π",mistake:"Using the arc length formula with the diameter instead of radius.",tip:"Arc length is the same fraction of circumference as the central angle is of 360°."},
+    {name:"Sector Area",eq:"A = (θ/360) × πr²",when:"Finding the area of a pie-slice shaped region of a circle.",example:"Circle r=8, central angle=120°: A = (120/360)·π·64 = (1/3)·64π ≈ 67.0",mistake:"Confusing sector area with arc length. Area formula has πr², length formula has 2πr.",tip:"Sector is a fraction of the full circle. The fraction = θ/360."},
+    {name:"Triangle Area",eq:"A = ½ × base × height",when:"Finding area of any triangle. Height must be perpendicular to the base.",example:"Base=10, height=6: A = ½·10·6 = 30",mistake:"Using the slant side as height. Height must be perpendicular (90°) to the base.",tip:"For equilateral triangle with side s: A = (√3/4)s². Occasionally useful."},
+    {name:"Trapezoid Area",eq:"A = ½ × (b₁ + b₂) × h",when:"Finding area of a trapezoid (two parallel sides).",example:"Parallel sides 8 and 12, height 5: A = ½·(8+12)·5 = ½·100 = 50",mistake:"Using just one base instead of the average of both bases.",tip:"Think of it as the average width times the height: ((b₁+b₂)/2) × h."},
+    {name:"Sphere Volume",eq:"V = (4/3)πr³",when:"Finding volume of a sphere or ball.",example:"Radius = 3: V = (4/3)π(27) = 36π ≈ 113.1 cubic units",mistake:"Forgetting the (4/3) coefficient — a common memory slip.",tip:"Surface area of sphere: SA = 4πr² (SAT sometimes provides these on reference sheet)."},
+    {name:"Cylinder Volume",eq:"V = πr²h",when:"Finding volume of a cylinder (like a can).",example:"Radius=4, height=10: V = π·16·10 = 160π ≈ 502.7",mistake:"Confusing radius with diameter in the r² term.",tip:"Think: area of circular base (πr²) × height. Volume = base area × height for prisms too."},
+    {name:"Cone Volume",eq:"V = (1/3)πr²h",when:"Finding volume of a cone — exactly 1/3 of the cylinder with same radius and height.",example:"Radius=3, height=9: V = (1/3)π·9·9 = 27π ≈ 84.8",mistake:"Forgetting the (1/3) factor.",tip:"Three cones fit inside one cylinder of same dimensions. That's how to remember the 1/3."},
+    {name:"Sine (SOH)",eq:"sin θ = Opposite / Hypotenuse",when:"Finding a missing side or angle using a right triangle, when you know opposite and hypotenuse.",example:"Angle=30°, hypotenuse=10: opposite = 10·sin(30°) = 10·0.5 = 5",mistake:"Mixing up opposite vs adjacent. Opposite is across from the angle; adjacent is next to it.",tip:"SOH-CAH-TOA: Sin=Opp/Hyp, Cos=Adj/Hyp, Tan=Opp/Adj. Memorize this forever."},
+    {name:"Cosine (CAH)",eq:"cos θ = Adjacent / Hypotenuse",when:"Finding a missing side or angle using adjacent side and hypotenuse.",example:"Angle=60°, hypotenuse=8: adjacent = 8·cos(60°) = 8·0.5 = 4",mistake:"Using sine when cosine is needed. Always draw the triangle to identify which sides you have.",tip:"cos(θ) = sin(90°−θ). Complementary angles have swapped sine and cosine."},
+    {name:"Tangent (TOA)",eq:"tan θ = Opposite / Adjacent",when:"Finding a missing side or angle when you know opposite and adjacent sides.",example:"Opposite=5, adjacent=5: tan(θ) = 1 → θ = 45°",mistake:"Not recognizing when to use tangent instead of sine or cosine.",tip:"Tangent is the ratio of sine to cosine: tan θ = sin θ/cos θ."},
+    {name:"Pythagorean Identity",eq:"sin²θ + cos²θ = 1",when:"Simplifying trig expressions or finding one trig value given another.",example:"If sin θ = 3/5, then cos²θ = 1 − 9/25 = 16/25 → cos θ = 4/5",mistake:"Forgetting that this is always true for any angle θ.",tip:"This identity is given by the unit circle: x²+y²=1, where x=cosθ, y=sinθ."},
+    {name:"Angle Relationships",eq:"Supplementary: a+b=180°; Complementary: a+b=90°; Vertical angles are equal",when:"Solving for unknown angles in geometric figures.",example:"Angle A and angle B are supplementary, A=115°: B = 180°−115° = 65°",mistake:"Confusing supplementary (180°) with complementary (90°).",tip:"Parallel lines cut by transversal: alternate interior angles equal; co-interior add to 180°."},
+    {name:"Interior Angles of a Polygon",eq:"Sum = (n−2) × 180°",when:"Finding the sum of interior angles of any polygon with n sides.",example:"Pentagon (n=5): (5−2)×180 = 3×180 = 540°. Each angle in regular pentagon = 108°",mistake:"Using n×180 instead of (n−2)×180.",tip:"Triangle: 180°. Quadrilateral: 360°. Each additional side adds 180° more."},
+    {name:"Similar Triangles",eq:"Corresponding sides in proportion; ratios are equal",when:"When two triangles have the same angles (AA, SAS, SSS similarity).",example:"ΔABC~ΔDEF with ratio 1:2. If AB=5, then DE=10.",mistake:"Confusing similarity (same shape) with congruence (same shape AND size).",tip:"If areas are asked: area ratio = (side ratio)². If ratio of sides is 1:2, area ratio is 1:4."},
+  ]
+};
+
+// ============ FORMULA RENDERING ============
+let formulasInit = false;
+function initFormulas() {
+  formulasInit = true;
+  Object.entries(formulaData).forEach(([topic, formulas]) => {
+    const container = document.getElementById(topic + 'Formulas');
+    if (!container) return;
+    formulas.forEach((f, i) => {
+      const id = `formula-${topic}-${i}`;
+      container.innerHTML += `
+        <div class="formula-card" id="${id}">
+          <div class="formula-header" onclick="toggleFormula('${id}')">
+            <span class="formula-name">${f.name}</span>
+            <div style="display:flex;align-items:center;gap:0.8rem;">
+              <span class="formula-eq">${f.eq}</span>
+              <span class="formula-toggle">▼</span>
+            </div>
+          </div>
+          <div class="formula-body">
+            <div class="formula-grid-inner">
+              <div class="formula-info">
+                <div class="formula-info-label">📌 When to Use</div>
+                <p>${f.when}</p>
+              </div>
+              <div class="formula-info">
+                <div class="formula-info-label">✏️ Example</div>
+                <p>${f.example}</p>
+              </div>
+              <div class="formula-info mistake">
+                <div class="formula-info-label">⚠️ Common Mistake</div>
+                <p>${f.mistake}</p>
+              </div>
+              <div class="formula-info tip">
+                <div class="formula-info-label">⚡ Speed Tip</div>
+                <p>${f.tip}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  });
+}
+function toggleFormula(id) { document.getElementById(id).classList.toggle('open'); }
+function showFormulaTopic(topic, btn) {
+  document.querySelectorAll('.formula-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('#formulaTabs .tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('fs-' + topic).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0, document.getElementById('formulaTabs').offsetTop - 80);
+}
+
+// ============ STUDY PLAN ============
+let studyPlanInit = false;
+function initStudyPlan() { studyPlanInit = true; showPlanDays(30, document.querySelector('.plan-tabs .btn-primary')); }
+
+const planData = {
+  30: [
+    {title:"SAT Orientation",topics:"Take a practice test. Identify strengths and weaknesses.",type:""},
+    {title:"Algebra: Lines",topics:"Slope, intercept, slope-intercept form",type:""},
+    {title:"Algebra: Systems",topics:"Substitution and elimination methods",type:""},
+    {title:"Review + Practice",topics:"10 algebra linear equations questions",type:"review"},
+    {title:"Percent & Ratios",topics:"Percent change, proportions, ratios",type:""},
+    {title:"Word Problems",topics:"Rate × Time = Distance, work rate problems",type:""},
+    {title:"MILESTONE",topics:"Mini quiz: Algebra fundamentals",type:"milestone"},
+    {title:"Quadratics",topics:"Factoring, FOIL, standard form",type:""},
+    {title:"Quadratic Formula",topics:"Discriminant, roots, vertex",type:""},
+    {title:"Quadratics Review",topics:"Practice 10 quadratic questions",type:"review"},
+    {title:"Functions",topics:"Notation, composition, transformations",type:""},
+    {title:"Exponents & Logs",topics:"Laws of exponents, exponential growth",type:""},
+    {title:"Sequences",topics:"Arithmetic and geometric sequences",type:""},
+    {title:"MILESTONE",topics:"Mini quiz: Advanced Math",type:"milestone"},
+    {title:"Geometry Basics",topics:"Area formulas, Pythagorean theorem",type:""},
+    {title:"Circles",topics:"Area, circumference, arc length, sectors",type:""},
+    {title:"Trig Basics",topics:"SOHCAHTOA, special right triangles",type:""},
+    {title:"Trig Review",topics:"Practice 10 geometry and trig questions",type:"review"},
+    {title:"Data & Statistics",topics:"Mean, median, mode, range",type:""},
+    {title:"Probability",topics:"Basic and compound probability",type:""},
+    {title:"Combinations",topics:"Permutations and combinations",type:""},
+    {title:"MILESTONE",topics:"Mini quiz: Data and statistics",type:"milestone"},
+    {title:"Strategy Day",topics:"Time management and guessing strategy",type:""},
+    {title:"Desmos Practice",topics:"Graphing equations, systems, quadratics",type:""},
+    {title:"Trap Avoidance",topics:"Review common SAT traps and mistakes",type:""},
+    {title:"Weak Topic Review",topics:"Return to your weakest topic from Day 1 test",type:"review"},
+    {title:"Full Mock Test",topics:"Complete timed SAT Math practice",type:"milestone"},
+    {title:"Score Analysis",topics:"Review every wrong answer from mock test",type:""},
+    {title:"Final Formula Review",topics:"Flash through all formulas from the library",type:"review"},
+    {title:"REST & CONFIDENCE",topics:"Light review only. Sleep early. You've got this! 🚀",type:"milestone"},
+  ],
+  60: [], 90: []
+};
+function generatePlan(days, base) {
+  const r=[...base];
+  const extras=["Deep Dive: Algebra","Deep Dive: Quadratics","Deep Dive: Functions","Deep Dive: Geometry","Deep Dive: Trigonometry","Deep Dive: Data Analysis","Mixed Practice Set","Timed Drill: 15 Questions","Error Review Session","Strategy Reinforcement","Desmos Mastery","Hard Question Practice","Formula Speed Drill","Concept Mapping","Mock Test Section","Score Analysis","Peer Teaching Review","Weak Area Focus","Comprehensive Review","Final Preparation"];
+  while(r.length<days){const e=extras[r.length%extras.length];r.push({title:e,topics:`Focused practice on ${e.replace('Deep Dive: ','').toLowerCase()}`,type:r.length%7===0?'milestone':r.length%3===0?'review':''});}
+  return r.slice(0,days);
+}
+planData[60]=generatePlan(60,planData[30]);
+planData[90]=generatePlan(90,planData[30]);
+
+function showPlanDays(days, btn) {
+  const c=document.getElementById('planContainer');
+  c.innerHTML='';
+  document.querySelectorAll('.plan-tabs .btn').forEach(b=>{b.className='btn btn-outline';});
+  if(btn)btn.className='btn btn-primary';
+  const plan=planData[days];
+  const grid=document.createElement('div');
+  grid.style.cssText='display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;';
+  plan.forEach((d,i)=>{
+    const card=document.createElement('div');
+    card.className='day-card'+(d.type?' '+d.type:'');
+    card.innerHTML=`<div class="day-num">DAY ${i+1}</div><div class="day-title">${d.title}</div><div class="day-topics">${d.topics}</div>`;
+    grid.appendChild(card);
+  });
+  c.appendChild(grid);
+}
+
+// ============ TIMETABLE ============
+let timetableInit = false;
+const weekDays = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const timeSlots = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM','9:00 PM','10:00 PM'];
+const ttState = {};
+
+function initTimetable() {
+  timetableInit = true;
+  const grid = document.getElementById('timetableGrid');
+  grid.innerHTML = '<div class="tg-header">Time</div>' + weekDays.map(d=>`<div class="tg-header">${d}</div>`).join('');
+  timeSlots.forEach(t => {
+    grid.innerHTML += `<div class="tg-time">${t}</div>`;
+    weekDays.forEach(d => {
+      const key=`${d}-${t}`;
+      const safeKey=key.replace(/[: ]/g,'_');
+      grid.innerHTML += `<div class="tg-cell" id="cell-${safeKey}" onclick="toggleCell('${key}')"></div>`;
+    });
+  });
+}
+
+function generateTimetable() {
+  if (!timetableInit) initTimetable();
+  clearTimetable();
+  const hours = parseInt(document.getElementById('ttHours').value) || 2;
+  const timeOf = document.getElementById('ttTime').value;
+  const weak = document.getElementById('ttWeak').value;
+  const rest = document.getElementById('ttRest').value;
+  
+  const morningSlots = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM'];
+  const afternoonSlots = ['2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
+  const eveningSlots = ['6:00 PM','7:00 PM','8:00 PM','9:00 PM'];
+  
+  let slots = timeOf === 'morning' ? morningSlots : timeOf === 'afternoon' ? afternoonSlots : eveningSlots;
+  
+  const subjects = ['Algebra','Adv. Math','Geometry','Data','Review','Desmos'];
+  // Put weak subject more frequently
+  const pool = [weak, weak, ...subjects.filter(s=>s!==weak)];
+  
+  weekDays.forEach((day, di) => {
+    if (day === rest) return;
+    const daySlots = slots.slice(0, hours);
+    daySlots.forEach((slot, si) => {
+      const key = `${day}-${slot}`;
+      const safeKey = key.replace(/[: ]/g,'_');
+      const cell = document.getElementById('cell-' + safeKey);
+      if (!cell) return;
+      // Milestone: practice test on Saturday or last day
+      let subject = pool[(di * 2 + si) % pool.length];
+      if (day === 'Sat' && rest !== 'Sat') subject = 'Practice Test';
+      if (day === 'Sun' && rest !== 'Sun' && si === 0) subject = 'Review';
+      cell.classList.add('filled');
+      cell.textContent = subject;
+      ttState[key] = subject;
+    });
+  });
+  
+  // Quick success message
+  const name = document.getElementById('ttName').value;
+  alert(`✅ Timetable generated${name ? ' for ' + name : ''}! You can click any cell to change the subject.`);
+}
+
+function toggleCell(key) {
+  const safeKey=key.replace(/[: ]/g,'_');
+  const cell=document.getElementById('cell-'+safeKey);
+  const subject=document.getElementById('subjectSelect').value;
+  if(cell.classList.contains('filled')){cell.classList.remove('filled');cell.textContent='';delete ttState[key];}
+  else{cell.classList.add('filled');cell.textContent=subject;ttState[key]=subject;}
+}
+
+function clearTimetable() {
+  Object.keys(ttState).forEach(k=>delete ttState[k]);
+  document.querySelectorAll('.tg-cell.filled').forEach(c=>{c.classList.remove('filled');c.textContent='';});
+}
+
+function printTimetable() {
+  window.print();
+}
+
+// ============ COUNTDOWN ============
+let countdownInterval;
+function startCountdown() {
+  const name=document.getElementById('examName').value||'SAT Exam';
+  const date=document.getElementById('examDate').value;
+  const target=document.getElementById('targetScore').value;
+  if(!date){alert('Please select your exam date!');return;}
+  const examDate=new Date(date+'T09:00:00');
+  if(examDate<new Date()){alert('Please select a future date!');return;}
+  document.getElementById('examNameDisplay').textContent=name;
+  document.getElementById('examDateDisplay').textContent='Exam Date: '+examDate.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  if(target)document.getElementById('targetScoreDisplay').textContent=`🎯 Target Score: ${target} / 1600`;
+  document.getElementById('countdownSetup').style.display='none';
+  document.getElementById('countdownDisplay').style.display='block';
+  if(countdownInterval)clearInterval(countdownInterval);
+  function update(){
+    const now=new Date();const diff=examDate-now;
+    if(diff<=0){document.getElementById('cdDays').textContent='0';clearInterval(countdownInterval);return;}
+    const d=Math.floor(diff/864e5);const h=Math.floor((diff%864e5)/36e5);
+    const m=Math.floor((diff%36e5)/6e4);const s=Math.floor((diff%6e4)/1e3);
+    document.getElementById('cdDays').textContent=d;
+    document.getElementById('cdHours').textContent=String(h).padStart(2,'0');
+    document.getElementById('cdMins').textContent=String(m).padStart(2,'0');
+    document.getElementById('cdSecs').textContent=String(s).padStart(2,'0');
+  }
+  update();countdownInterval=setInterval(update,1000);
+}
+function resetCountdown(){
+  document.getElementById('countdownSetup').style.display='block';
+  document.getElementById('countdownDisplay').style.display='none';
+  if(countdownInterval)clearInterval(countdownInterval);
+}
+
+// ============ PROFILE ============
+let profileInit = false;
+function initProfile() {
+  profileInit = true;
+  const topics=['Algebra','Advanced Math','Geometry','Trigonometry','Data Analysis'];
+  const pcts=[65,40,55,30,70];
+  const container=document.getElementById('topicProgress');
+  topics.forEach((t,i)=>{
+    container.innerHTML+=`
+      <div class="progress-bar-wrap">
+        <label><span>${t}</span><span>${pcts[i]}%</span></label>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="prog-${i}" data-width="${pcts[i]}%"></div></div>
+      </div>`;
+  });
+  setTimeout(()=>{ document.querySelectorAll('.progress-fill').forEach(el=>{el.style.width=el.dataset.width;}); },300);
+}
+function changeAvatar() {
+  const avatars=['😊','🎯','🧠','📚','⭐','🚀'];
+  const av=document.getElementById('profileAvatar');
+  const curr=av.textContent;
+  const idx=avatars.indexOf(curr);
+  av.textContent=avatars[(idx+1)%avatars.length];
+}
+function updateProfile() {
+  const name=document.getElementById('pName').value;
+  const email=document.getElementById('pEmail').value;
+  if(name){document.getElementById('profileName').textContent=name;document.getElementById('profileAvatar').textContent=name[0].toUpperCase();}
+  if(email)document.getElementById('profileEmail').textContent=email;
+}
+function updateProfileStats() {
+  const curr=parseInt(document.getElementById('pCurrentScore').value)||0;
+  const target=parseInt(document.getElementById('pTargetScore').value)||0;
+  document.getElementById('pStatCurrent').textContent=curr||'—';
+  document.getElementById('pStatTarget').textContent=target||'—';
+  if(curr&&target){
+    const gap=target-curr;
+    document.getElementById('pStatGap').textContent=gap>0?'+'+gap:gap;
+    const pct=Math.max(0,Math.min(100,Math.round((curr-400)/(target-400)*100)));
+    document.getElementById('pStatPct').textContent=pct+'%';
+  }
+}
+
+// ============ REGISTER ============
+function submitRegistration() {
+  const name=document.getElementById('regName').value.trim();
+  const email=document.getElementById('regEmail').value.trim();
+  if(!name||!email){alert('Please fill in your name and email!');return;}
+  if(!email.includes('@')){alert('Please enter a valid email address!');return;}
+  const phone=document.getElementById('regPhone').value;
+  const country=document.getElementById('regCountry').value;
+  const satDate=document.getElementById('regSatDate').value;
+  const interest=document.getElementById('regInterest').value;
+  const message=document.getElementById('regMessage').value;
+  const subject=encodeURIComponent('New Zenova SAT Prep Registration');
+  const body=encodeURIComponent(`NEW REGISTRATION - Zenova SAT Prep\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCountry: ${country}\nSAT Date: ${satDate}\nInterest: ${interest}\nMessage: ${message}\n\nRegistered at: ${new Date().toLocaleString()}`);
+  window.open(`mailto:zenovaofficial188@gmail.com?subject=${subject}&body=${body}`);
+  document.getElementById('registerForm').style.display='none';
+  document.getElementById('regSuccess').style.display='block';
+  document.getElementById('regEmailConfirm').textContent=email;
+}
+
+// ============ BLOG MODAL ============
+const blogContent = {
+  zenova:{tag:'Company',title:'Introducing Zenova — Where Ideas Become Impact',body:`<p>Zenova is a next-generation company built at the intersection of education and media. We believe that every student deserves access to great learning tools, and every creator deserves a platform to shine.</p><h3>Our Mission</h3><p>To democratize access to quality education and creative media for the next generation — starting in Africa and expanding globally.</p><h3>Our Core Values</h3><p><strong>Innovation</strong> — We rethink how tools can serve people better.<br><strong>Education</strong> — Learning is at the core of everything we build.<br><strong>Creativity</strong> — We celebrate bold ideas and unique expressions.<br><strong>Accessibility</strong> — Our tools are built for everyone, everywhere.</p><h3>Visit Us</h3><p><a href="https://emmnueljohn.github.io/Zenova/" target="_blank">emmnueljohn.github.io/Zenova</a></p>`},
+  study:{tag:'Zenova Study',title:'Zenova Study: Your All-In-One Academic Companion',body:`<p>Zenova Study is a free web application designed to help students learn smarter and achieve more. It combines goal tracking, timetable management, exam preparation, and syllabus planning in one clean interface.</p><h3>Key Features</h3><p>📅 Smart Timetable Management<br>🎯 Goal Tracking & Progress<br>📝 Exam Countdown<br>📚 Syllabus Planner<br>✅ 100% Free</p><h3>Visit Zenova Study</h3><p><a href="https://emmnueljohn.github.io/Zenova-Study/" target="_blank">emmnueljohn.github.io/Zenova-Study</a></p>`},
+  media:{tag:'Zenova Media',title:'Zenova Media: Educational Content That Inspires',body:`<p>Zenova Media is our YouTube-based content arm, delivering educational videos, tutorials, and creative content to students and learners across Africa and beyond.</p><h3>What We Cover</h3><p>📚 Study tips and productivity hacks<br>🔢 Math and science tutorials<br>💻 Digital skills for students<br>🎯 SAT and exam preparation content</p><h3>Watch on YouTube</h3><p><a href="https://www.youtube.com/channel/UCa_ojEhbLwwsK1JO6_NqRLw" target="_blank">@Zenovaofficial188</a></p><p>Subscribe today and join our growing community of learners!</p>`},
+  desmosblog:{tag:'Coming Soon',title:'Zenova SAT Prep (Desmos) — Register for Early Access',body:`<p>We're building something special. <strong>Zenova SAT Prep (Desmos)</strong> will be a dedicated platform teaching students exactly how to use the Desmos graphing calculator to master the digital SAT.</p><h3>What's Coming</h3><p>🎯 Step-by-step Desmos tutorials for SAT Math<br>📊 Video walkthroughs of hard SAT problems solved with Desmos<br>🔢 Interactive practice problems<br>📈 Strategy guides for calculator-based SAT sections</p><h3>Be First to Know</h3><p>Register now using the button below and we'll email you the moment it goes live.</p><div style="margin-top:1.5rem;"><button class="btn btn-primary" onclick="closeBlog();showPage('register');setActiveByPage('register')">Register for Early Access →</button></div>`},
+  satprep:{tag:'SAT Prep',title:'Why Zenova SAT Prep is Different',body:`<p>Most SAT formula websites give you a plain list. We give you context, strategy, and a full ecosystem.</p><h3>What Makes Us Different</h3><p>✅ Every formula includes: when to use it, an example, common mistakes, and speed tips<br>✅ Strategy section separate from formulas<br>✅ Score improvement plans by score range<br>✅ Desmos calculator integration<br>✅ 30, 60, and 90-day study plans<br>✅ Exam countdown timer<br>✅ Personal profile and timetable generator<br>✅ 100% free</p><h3>Our Philosophy</h3><p>The SAT is not about memorizing formulas — it's about knowing when and how to use them efficiently under time pressure.</p>`},
+  tips:{tag:'SAT Tips',title:'5 SAT Math Strategies Every 700+ Scorer Uses',body:`<h3>1. Use Desmos Aggressively</h3><p>High scorers don't avoid the calculator — they master it. Graph equations, find intersections, and solve systems visually in seconds.</p><h3>2. Know the Discriminant Cold</h3><p>b²−4ac instantly tells you how many solutions a quadratic has. High scorers calculate this before doing anything else.</p><h3>3. Work Backwards on Hard Problems</h3><p>When stuck, plug the answer choices back into the problem. Start with the middle value — if too big, go smaller.</p><h3>4. Always Check the Question</h3><p>SAT often asks for 2x, not x. Or x+y, not just x. After solving, re-read what's actually being asked.</p><h3>5. Flag and Move — Never Freeze</h3><p>A question you skip and come back to with fresh eyes is worth more than 3 minutes of staring. Keep moving.</p>`}
+};
+function openBlog(id) {
+  const b=blogContent[id]; if(!b)return;
+  document.getElementById('modalTag').textContent=b.tag;
+  document.getElementById('modalTitle').textContent=b.title;
+  document.getElementById('modalBody').innerHTML=b.body;
+  document.getElementById('blogModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeBlog() {
+  document.getElementById('blogModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+// PDF Print
+function printPDF() {
+  window.print();
+}
+
+// Init timetable when study plan page shown
+(function(){
+  // Auto-init timetable on load if needed
+})();
+</script>
+</body>
+</html>
